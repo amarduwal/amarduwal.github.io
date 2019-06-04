@@ -5,8 +5,16 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
+
+@font-face {
+  font-family: 'amarduwal';
+  src: url('../fonts/amarduwal.ttf')  format('truetype'); /* Safari, Android, iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
-  font-family: sans-serif;
+  font-family: 'amarduwal';
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -497,7 +505,7 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'amarduwal', Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.75;
   color: #333;
   background: #fff;
@@ -519,7 +527,7 @@ h3, .c-number,
 h4,
 h5,
 h6 {
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'amarduwal', Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -2129,7 +2137,7 @@ img[height] {
 
 .c-brand__title,
 .c-brand__sub-title {
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'amarduwal' ,Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -2395,7 +2403,7 @@ img[height] {
 }
 
 .nivo-lightbox-theme-default .nivo-lightbox-title {
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'amarduwal', Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: none;
 }
 

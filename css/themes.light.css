@@ -4,7 +4,7 @@
 /* Body */
 body {
   background: #fff;
-  color: #939393;
+  color: #000;
 }
 
 /* Heading */
@@ -14,7 +14,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #727272;
+  color: #000;
 }
 
 /* Link Container */
@@ -78,7 +78,7 @@ hr,
 
 /* Brand Colors */
 .t-title__first-word {
-  color: #939393;
+  color: #000;
 }
 
 .t-title__second-word {
@@ -86,7 +86,7 @@ hr,
 }
 
 .t-sub-title {
-  color: #939393;
+  color: #000;
 }
 
 /* Brand Typography */
@@ -113,17 +113,17 @@ hr,
 
 /* Icons */
 .fa {
-  color: #e0e0e0;
+  color: #38555B;
 }
 
 /* Social Buttons */
 .t-social-button {
-  background: #ededed;
-  border-color: #ededed;
+  background: #fff;
+  border-color: #000;
 }
 
 .t-social-button .fa {
-  color: #c6c6c6;
+  color: #000;
 }
 
 .t-social-button:hover {
@@ -140,7 +140,7 @@ hr,
 }
 
 .t-image-overlay * {
-  color: #3a3a3a;
+  color: #000;
 }
 
 .t-image-overlay:hover img {
