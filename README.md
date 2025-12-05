@@ -1,35 +1,46 @@
-# 🌙 **Amar Duwal**
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=130&text=Amar%20Duwal&fontSize=40&fontColor=ffffff&animation=twinkling" alt="Amar Duwal" />
+</p>
 
-### **🚀 Developer | 🧠 Innovator | 🔐 AI & Crypto Explorer**
+<p align="center"><em>Senior Ruby on Rails Developer</em></p>
 
-Hi, I’m **Amar** — I build intelligent apps, modern games, and creative digital experiences.
-My work blends **AI**, **encryption**, **web/mobile apps**, and **interactive learning tools** with clean, modern design.
+<p align="center">
+  Bhaktapur, Nepal • <a href="https://amarduwal.github.io">amarduwal.github.io</a> •
+  <a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a> •
+  <a href="tel:+9779841477080">+977 9841477080</a>
+</p>
 
-👉 **Portfolio:** [https://amarduwal.github.io](https://amarduwal.github.io)
-_(Best place to explore all my projects.)_
+<p align="center">
+  <samp>Building reliable Rails apps, clean APIs, and modern UIs — pragmatic, fast, and user‑centered.</samp>
+</p>
 
-## ⚡ **What I Do**
+## Core tech
 
-- Build fast, modern apps (Web + Mobile)
-- Create interactive & learning-focused games
-- Explore AI-driven encryption & automation
-- Craft clean UI/UX with a playful touch
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=ruby,rails,postgres,aws,react,js,ts,vue,nextjs,flutter,py,nodejs,nestjs,supabase,linux,bash,git,github,docker,figma&perline=14" />
+</p>
 
-## 🛠️ **Tech I Enjoy**
+<p align="center">
+  <a href="https://github.com/amarduwal?tab=repositories">Projects</a> •
+  <a href="https://amarduwal.github.io">Portfolio</a> •
+  <a href="mailto:duwal.amar2006@gmail.com">Email</a>
+</p>
 
-`Ruby` • `RubyOnRails` • `TypeScript` • `React` • `Next.js`
-`Flutter` • `Node.js` • `NestJS` • `Supabase` • `Python`
+---
 
-## 🎯 **Current Focus**
+<p align="center">
+  <img alt="snake animation" src="https://raw.githubusercontent.com/amarduwal/amarduwal/output/github-contribution-grid-snake-dark.svg" />
+</p>
 
-- Smarter apps powered by AI
-- Better UI/UX with minimalism
-- Faster, scalable backend systems
-- More fun learning-based games
+## 🤝 Looking to Collaborate?
 
-## 🐾 **Let’s Connect**
+I love working on **high-impact, well-crafted products** — especially in:
 
-If you enjoy innovation, AI, or building cool things — I’m always open to collaborate.
+- ⚙️ **Scalable backends (Rails, Node, NestJS)**
+- 🔐 **AI-assisted encryption & secure systems**
+- 📱 **Mobile apps with clean and modern UI**
+- 🧩 **Tools that solve real problems elegantly**
 
-⭐ _Feel free to explore & star anything you like!_
-🌐 Portfolio again (because it’s worth it): **amarduwal.github.io**
+If you’re building something meaningful, ambitious, or creatively challenging,
+I’d be glad to connect.
+Feel free to reach out anytime via my **portfolio** or **email**.
