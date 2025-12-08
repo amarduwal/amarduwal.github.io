@@ -6,8 +6,7 @@
 
 <p align="center">
   Bhaktapur, Nepal • <a href="https://amarduwal.github.io">amarduwal.github.io</a> •
-  <a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a> •
-  <a href="tel:+9779841477080">+977 9841477080</a>
+  <a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a>
 </p>
 
 <p align="center">
