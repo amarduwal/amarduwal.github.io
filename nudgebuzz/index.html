@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NudgeBuzz - Your Personal Notification Engine</title>
+    <link rel="icon" href="../images/nudgebuzz/favicon.png" type="image/png" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #6c63ff 0%, #764ba2 100%);
+        color: white;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+      }
+      h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+      .cta {
+        display: inline-block;
+        background: white;
+        color: #6c63ff;
+        padding: 15px 40px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        margin: 10px;
+        transition: transform 0.2s;
+      }
+      .cta:hover {
+        transform: scale(1.05);
+      }
+      .features {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+      }
+      .feature {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .feature-icon {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔔 NudgeBuzz</h1>
+      <p>Your Personal Notification Engine</p>
+      <p>
+        Create custom notification channels with smart scheduling. Perfect for
+        reminders, habits, quotes, and more.
+      </p>
+
+      <a href="#" class="cta">Download on Google Play</a>
+      <a
+        href="../nudgebuzz-legal/privacy-policy.html"
+        class="cta"
+        style="background: transparent; border: 2px solid white; color: white"
+        >Privacy Policy</a
+      >
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🔔</div>
+          <h3>Custom Channels</h3>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⏰</div>
+          <h3>Smart Scheduling</h3>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🎨</div>
+          <h3>Beautiful Design</h3>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔒</div>
+          <h3>Privacy First</h3>
+        </div>
+      </div>
+
+      <p style="margin-top: 50px; font-size: 0.9em; opacity: 0.7">
+        © 2026 NudgeBuzz. All rights reserved.<br />
+        <a href="../nudgebuzz-legal/terms-of-service.html" style="color: white"
+          >Terms</a
+        >
+        •
+        <a href="../nudgebuzz-legal/privacy-policy.html" style="color: white"
+          >Privacy</a
+        >
+        •
+        <a href="../nudgebuzz-legal/data-deletion.html" style="color: white"
+          >Data Deletion</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
