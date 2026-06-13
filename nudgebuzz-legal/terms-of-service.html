@@ -3,183 +3,281 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NudgeBuzz - Terms of Service</title>
-    <link rel="icon" href="../images/nudgebuzz/favicon.png" type="image/jpeg" />
+    <title>NudgeBuzz — Terms of Service</title>
+    <link rel="icon" href="../images/nudgebuzz/favicon.png" type="image/png" />
     <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      :root {
+        --primary: #6c63ff;
+        --bg: #0f0f14;
+        --surface: #1a1a24;
+        --border: #2a2a3a;
+        --text: #f0f0f5;
+        --text-muted: #9090a8;
+      }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 40px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(15,15,20,0.9);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav-brand { font-size: 17px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .nav-links { display: flex; gap: 24px; }
+      .nav-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+      .nav-links a:hover { color: var(--text); }
+
+      .page-header {
+        padding: 56px 40px 40px;
+        max-width: 780px;
         margin: 0 auto;
-        padding: 20px;
-        color: #333;
+        border-bottom: 1px solid var(--border);
       }
-      h1 {
-        color: #6c63ff;
+      .page-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 16px;
       }
+      .page-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+      .page-header .meta { font-size: 13px; color: var(--text-muted); }
+
+      .content { max-width: 780px; margin: 0 auto; padding: 40px 40px 80px; }
+
       h2 {
-        color: #444;
-        margin-top: 30px;
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 44px;
+        margin-bottom: 14px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
-      .last-updated {
-        color: #666;
-        font-style: italic;
+      h2::before {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 20px;
+        background: var(--primary);
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      h3 { font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 10px; color: var(--text); }
+      p { color: var(--text-muted); margin-bottom: 12px; }
+      ul { list-style: none; margin-bottom: 16px; }
+      ul li {
+        color: var(--text-muted);
+        padding: 6px 0 6px 20px;
+        position: relative;
+        font-size: 15px;
+      }
+      ul li::before { content: '–'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+      strong { color: var(--text); font-weight: 600; }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .info-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--primary);
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+      .caps { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .footer-note { font-size: 13px; color: var(--text-muted); }
+      .footer-links { display: flex; gap: 20px; }
+      .footer-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; }
+      .footer-links a:hover { color: var(--text); }
+
+      @media (max-width: 640px) {
+        nav, .page-header, .content, footer { padding-left: 20px; padding-right: 20px; }
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 28px; }
       }
     </style>
   </head>
   <body>
-    <h1>Terms of Service for NudgeBuzz</h1>
-    <p class="last-updated">Last Updated: 13 June 2026</p>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>
-      By downloading, installing, or using NudgeBuzz ("the App"), you agree to
-      be bound by these Terms of Service ("Terms"). If you do not agree, do not
-      use the App.
-    </p>
+    <nav>
+      <a href="../nudgebuzz/index.html" class="nav-brand">🔔 NudgeBuzz</a>
+      <div class="nav-links">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="data-deletion.html">Data Deletion</a>
+      </div>
+    </nav>
 
-    <h2>2. Description of Service</h2>
-    <p>
-      NudgeBuzz is a free mobile application that allows users to create
-      customized notification channels with scheduled content delivery.
-      All features are available at no cost.
-    </p>
+    <div class="page-header">
+      <div class="page-badge">📄 Legal</div>
+      <h1>Terms of Service</h1>
+      <p class="meta">Last updated: 13 June 2026</p>
+    </div>
 
-    <h2>3. User Accounts</h2>
-    <ul>
-      <li>
-        You may use the App without creating an account (local storage only)
-      </li>
-      <li>Account creation is optional and enables cloud sync features</li>
-      <li>
-        You are responsible for maintaining the confidentiality of your account
-        credentials
-      </li>
-      <li>You must be at least 13 years old to create an account</li>
-      <li>One account per person</li>
-    </ul>
+    <div class="content">
 
-    <h2>4. Features</h2>
-    <p>NudgeBuzz is completely free. All features are available to all users:</p>
-    <ul>
-      <li>Unlimited channels and content items</li>
-      <li>Text, URL, image, video, and audio content</li>
-      <li>Smart scheduling and notifications</li>
-      <li>Channel templates</li>
-      <li>Optional cloud sync and backup</li>
-      <li>Data export and import</li>
-    </ul>
+      <h2>Acceptance of Terms</h2>
+      <p>
+        By downloading, installing, or using NudgeBuzz ("the App"), you agree to be bound
+        by these Terms of Service. If you do not agree, do not use the App.
+      </p>
 
-    <h2>5. Optional Donations</h2>
-    <p>
-      NudgeBuzz is free and will remain free. If you'd like to support
-      development, you can buy the developer a coffee at
-      <a href="https://buymeacoffee.com/amarduwal">buymeacoffee.com/amarduwal</a>.
-      Donations are entirely voluntary and do not unlock additional features.
-    </p>
+      <h2>Description of Service</h2>
+      <p>
+        NudgeBuzz is a free mobile application that allows users to create customized notification
+        channels with scheduled content delivery. All features are available at no cost.
+      </p>
 
-    <h2>6. User Content</h2>
-    <ul>
-      <li>You retain all rights to content you create in the App</li>
-      <li>
-        You are responsible for your content and must not upload illegal or
-        harmful material
-      </li>
-      <li>We do not claim ownership of your content</li>
-      <li>
-        You grant us license to store and sync your content (if cloud sync is
-        enabled)
-      </li>
-    </ul>
+      <h2>User Accounts</h2>
+      <ul>
+        <li>You may use the App without creating an account — data is stored locally.</li>
+        <li>Account creation is optional and enables cloud sync features.</li>
+        <li>You are responsible for maintaining the confidentiality of your account credentials.</li>
+        <li>You must be at least 13 years old to create an account.</li>
+        <li>One account per person.</li>
+      </ul>
 
-    <h2>7. Acceptable Use</h2>
-    <p>You agree NOT to:</p>
-    <ul>
-      <li>Use the App for illegal purposes</li>
-      <li>Attempt to hack, reverse-engineer, or disrupt the App</li>
-      <li>Upload malicious content or spam</li>
-      <li>Violate others' intellectual property rights</li>
-      <li>
-        Create excessive notifications that could be considered harassment
-      </li>
-      <li>Share your account with others</li>
-    </ul>
+      <h2>Features</h2>
+      <p>NudgeBuzz is completely free. All features are available to all users:</p>
+      <ul>
+        <li>Unlimited channels and content items</li>
+        <li>Text, URL, image, video, and audio content</li>
+        <li>Smart scheduling and notifications</li>
+        <li>All channel templates</li>
+        <li>Optional cloud sync and backup</li>
+        <li>Data export and import</li>
+      </ul>
 
-    <h2>8. Notifications</h2>
-    <ul>
-      <li>You control all notification settings</li>
-      <li>Notifications are sent locally by your device</li>
-      <li>We are not responsible for notification delivery failures</li>
-      <li>Battery optimization and device settings may affect notifications</li>
-    </ul>
+      <h2>Optional Donations</h2>
+      <p>
+        NudgeBuzz is free and will remain free. If you'd like to support development, you can
+        make an optional crypto donation via the app's Support Development section.
+        Donations are entirely voluntary and do not unlock additional features.
+      </p>
 
-    <h2>9. Data and Privacy</h2>
-    <ul>
-      <li>Your use of the App is governed by our Privacy Policy</li>
-      <li>Local data is stored on your device</li>
-      <li>Cloud sync is optional and requires explicit consent</li>
-      <li>You can export and delete your data at any time</li>
-    </ul>
+      <h2>User Content</h2>
+      <ul>
+        <li>You retain all rights to content you create in the App.</li>
+        <li>You are responsible for your content and must not add illegal or harmful material.</li>
+        <li>We do not claim ownership of your content.</li>
+        <li>You grant us a limited licence to store and sync your content if cloud sync is enabled.</li>
+      </ul>
 
-    <h2>10. Intellectual Property</h2>
-    <ul>
-      <li>The App, its design, code, and trademarks are owned by NudgeBuzz</li>
-      <li>You may not copy, modify, or distribute the App</li>
-      <li>User-generated content remains yours</li>
-    </ul>
+      <h2>Acceptable Use</h2>
+      <p>You agree <strong>not</strong> to:</p>
+      <ul>
+        <li>Use the App for illegal purposes</li>
+        <li>Attempt to hack, reverse-engineer, or disrupt the App</li>
+        <li>Upload malicious content or spam</li>
+        <li>Violate others' intellectual property rights</li>
+        <li>Create excessive notifications that could be considered harassment</li>
+        <li>Share your account with others</li>
+      </ul>
 
-    <h2>11. Disclaimers</h2>
-    <p>
-      THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DO NOT
-      GUARANTEE:
-    </p>
-    <ul>
-      <li>Uninterrupted or error-free service</li>
-      <li>Notification delivery accuracy</li>
-      <li>Data backup reliability</li>
-      <li>Compatibility with all devices</li>
-    </ul>
+      <h2>Notifications</h2>
+      <ul>
+        <li>You control all notification settings within the App</li>
+        <li>Notifications are sent locally by your device</li>
+        <li>We are not responsible for notification delivery failures</li>
+        <li>Battery optimisation and device settings may affect notifications</li>
+      </ul>
 
-    <h2>12. Limitation of Liability</h2>
-    <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE ARE NOT LIABLE FOR:</p>
-    <ul>
-      <li>Data loss or corruption</li>
-      <li>Missed notifications</li>
-      <li>Device battery drain</li>
-      <li>Indirect, incidental, or consequential damages</li>
-    </ul>
+      <h2>Data and Privacy</h2>
+      <ul>
+        <li>Your use of the App is governed by our <a href="privacy-policy.html">Privacy Policy</a></li>
+        <li>Local data is stored on your device</li>
+        <li>Cloud sync is optional and requires explicit consent</li>
+        <li>You can export and delete your data at any time</li>
+      </ul>
 
-    <h2>13. Account Termination</h2>
-    <ul>
-      <li>You may delete your account at any time in Settings</li>
-      <li>We may suspend accounts that violate these Terms</li>
-      <li>Upon termination, cloud data will be deleted within 30 days</li>
-    </ul>
+      <h2>Intellectual Property</h2>
+      <ul>
+        <li>The App, its design, code, and branding are owned by NudgeBuzz</li>
+        <li>You may not copy, modify, or distribute the App</li>
+        <li>User-generated content remains yours</li>
+      </ul>
 
-    <h2>14. Changes to Terms</h2>
-    <ul>
-      <li>We may update these Terms at any time</li>
-      <li>Continued use after changes means acceptance</li>
-      <li>Material changes will be notified via the App or email</li>
-    </ul>
+      <h2>Disclaimers</h2>
+      <p class="caps">
+        THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND. WE DO NOT GUARANTEE:
+        UNINTERRUPTED OR ERROR-FREE SERVICE, NOTIFICATION DELIVERY ACCURACY, DATA BACKUP
+        RELIABILITY, OR COMPATIBILITY WITH ALL DEVICES.
+      </p>
 
-    <h2>15. Governing Law</h2>
-    <p>
-      These Terms are governed by applicable laws. Disputes will be resolved
-      through good-faith negotiation or, if necessary, through binding
-      arbitration.
-    </p>
+      <h2>Limitation of Liability</h2>
+      <p class="caps">
+        TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE ARE NOT LIABLE FOR: DATA LOSS OR
+        CORRUPTION, MISSED NOTIFICATIONS, DEVICE BATTERY DRAIN, OR INDIRECT, INCIDENTAL,
+        OR CONSEQUENTIAL DAMAGES.
+      </p>
 
-    <h2>16. Contact</h2>
-    <p>For questions about these Terms, contact us at:</p>
-    <ul>
-      <li>Email: nudgebuzz1@gmail.com</li>
-      <li>Website: https://amarduwal.github.io</li>
-    </ul>
+      <h2>Account Termination</h2>
+      <ul>
+        <li>You may delete your account at any time in Settings</li>
+        <li>We may suspend accounts that violate these Terms</li>
+        <li>Upon termination, cloud data will be deleted within 30 days</li>
+      </ul>
 
-    <hr />
-    <p style="text-align: center; color: #666; font-size: 14px">
-      © 2026 NudgeBuzz. All rights reserved.
-    </p>
+      <h2>Changes to Terms</h2>
+      <ul>
+        <li>We may update these Terms at any time</li>
+        <li>Continued use after changes means acceptance</li>
+        <li>Material changes will be notified via the App or email</li>
+      </ul>
+
+      <h2>Governing Law</h2>
+      <p>
+        These Terms are governed by applicable laws. Disputes will be resolved through
+        good-faith negotiation or, if necessary, through binding arbitration.
+      </p>
+
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:nudgebuzz1@gmail.com">nudgebuzz1@gmail.com</a></li>
+        <li>Website: <a href="https://amarduwal.github.io">amarduwal.github.io</a></li>
+      </ul>
+
+    </div>
+
+    <footer>
+      <div class="footer-note">© 2026 NudgeBuzz · All rights reserved</div>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="data-deletion.html">Data Deletion</a>
+        <a href="mailto:nudgebuzz1@gmail.com">Contact</a>
+      </div>
+    </footer>
+
   </body>
 </html>
