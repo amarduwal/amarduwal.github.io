@@ -202,6 +202,28 @@
         This requires your explicit opt-in and can be disabled or deleted at any time.
       </p>
 
+      <h2>Groups &amp; Nudges</h2>
+      <p>
+        If you choose to use Groups &amp; Nudges, you'll need to sign in with an email/password account.
+        We then collect and store:
+      </p>
+      <ul>
+        <li>Your email address and display name, to identify you to group admins and members</li>
+        <li>Group membership records — which groups you're in, your role, and whether you've accepted or declined an invite</li>
+        <li>The content of Nudges sent to or by you (title and message text)</li>
+        <li>A push notification token for your device, so nudges can reach you</li>
+        <li>A coarse "last active" timestamp, used only to prioritize real-time delivery to members currently using the app</li>
+      </ul>
+      <p>
+        This data is stored in Google Firebase (Firestore) and is not shared outside the app. It is used solely
+        to operate the Groups &amp; Nudges feature. Every other feature of NudgeBuzz continues to work entirely
+        offline, with no account and no data leaving your device.
+      </p>
+      <p>
+        You can leave a group at any time from the group's screen, which stops future nudges to you and removes
+        your membership record.
+      </p>
+
       <h2>How We Use Your Information</h2>
       <ul>
         <li>To provide and operate the NudgeBuzz service on your device</li>
@@ -256,7 +278,8 @@
       <p>NudgeBuzz uses the following third-party services:</p>
       <ul>
         <li><strong>Firebase Authentication</strong> — For optional user login. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
-        <li><strong>Firebase Firestore</strong> — For optional cloud sync. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
+        <li><strong>Firebase Firestore</strong> — For optional cloud sync and Groups &amp; Nudges data. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
+        <li><strong>Firebase Cloud Messaging &amp; Cloud Functions</strong> — Used only by Groups &amp; Nudges, to deliver nudges to group members' devices. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
         <li><strong>Google AdMob</strong> — For displaying advertisements. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
       </ul>
 
