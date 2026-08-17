@@ -36,7 +36,8 @@
         top: 0;
         z-index: 10;
       }
-      .nav-brand { font-size: 17px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .nav-brand { display: flex; align-items: center; gap: 9px; font-size: 17px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .nav-brand img { width: 26px; height: 26px; display: block; }
       .nav-links { display: flex; gap: 24px; }
       .nav-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; transition: color 0.2s; }
       .nav-links a:hover { color: var(--text); }
@@ -175,7 +176,7 @@
   <body>
 
     <nav>
-      <a href="../nudgebuzz/index.html" class="nav-brand">🔔 NudgeBuzz</a>
+      <a href="../nudgebuzz/index.html" class="nav-brand"><img src="../images/nudgebuzz/logo-128.png" alt="" />NudgeBuzz</a>
       <div class="nav-links">
         <a href="privacy-policy.html">Privacy</a>
         <a href="terms-of-service.html">Terms</a>

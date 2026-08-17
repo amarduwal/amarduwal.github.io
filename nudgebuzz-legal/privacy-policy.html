@@ -35,11 +35,15 @@
         z-index: 10;
       }
       .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 9px;
         font-size: 17px;
         font-weight: 700;
         color: var(--text);
         text-decoration: none;
       }
+      .nav-brand img { width: 26px; height: 26px; display: block; }
       .nav-links { display: flex; gap: 24px; }
       .nav-links a {
         color: var(--text-muted);
@@ -156,7 +160,7 @@
   <body>
 
     <nav>
-      <a href="../nudgebuzz/index.html" class="nav-brand">🔔 NudgeBuzz</a>
+      <a href="../nudgebuzz/index.html" class="nav-brand"><img src="../images/nudgebuzz/logo-128.png" alt="" />NudgeBuzz</a>
       <div class="nav-links">
         <a href="privacy-policy.html">Privacy</a>
         <a href="terms-of-service.html">Terms</a>
@@ -167,7 +171,7 @@
     <div class="page-header">
       <div class="page-badge">🔒 Legal</div>
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated: 24 July 2026</p>
+      <p class="meta">Last updated: 17 August 2026</p>
     </div>
 
     <div class="content">
@@ -200,6 +204,28 @@
       <p>
         If you choose to enable cloud sync, your channels and content are backed up to Firebase Cloud Firestore.
         This requires your explicit opt-in and can be disabled or deleted at any time.
+      </p>
+
+      <h2>Location Data</h2>
+      <p>
+        NudgeBuzz's optional <strong>Location Trigger</strong> feature reminds you the moment you arrive
+        somewhere you've chosen (e.g. a pharmacy), instead of on a timer. It is off by default and only
+        requests location access if you turn it on for a specific channel; the app explains why before
+        the system permission prompt is shown.
+      </p>
+      <ul>
+        <li><strong>What we access</strong> — With your permission, NudgeBuzz accesses your device's precise (GPS) and approximate location, including in the background ("Allow all the time"), so the reminder can still fire while the app is closed.</li>
+        <li><strong>How it's used</strong> — Location is evaluated entirely on-device using Android's FusedLocationProvider and GeofencingClient to detect when you arrive at a saved place. Your location is never sent to us or stored on any server.</li>
+        <li><strong>Place search</strong> — When you search for an address or business name to set as a trigger, your search text (not your device location) is sent to OpenStreetMap's Nominatim service to look up matching places.</li>
+        <li><strong>Your control</strong> — Location Trigger is enabled per channel. You can disable it anytime in that channel's settings, or revoke the permission in Android Settings, without affecting any other feature.</li>
+      </ul>
+
+      <h2>AI-Powered Content</h2>
+      <p>
+        If you use the optional AI Content feature, the topic or instructions you type (e.g. "facts about
+        biology") are sent to Google's Gemini API, using an API key you provide yourself in Settings, to
+        generate content items. No other app data (your channels, saved content, or account information)
+        is included in this request. This feature is off until you add your own API key.
       </p>
 
       <h2>Groups &amp; Nudges</h2>
@@ -260,6 +286,8 @@
       <ul>
         <li><strong>Firebase (Google)</strong> — For authentication and cloud sync, only if you enable it. Governed by Google's privacy policy.</li>
         <li><strong>Google AdMob</strong> — For displaying advertisements, as described in the Advertising section above.</li>
+        <li><strong>Google Gemini API</strong> — For AI-generated content, only if you enable it and provide your own API key. Only the topic you type is sent, using your own key.</li>
+        <li><strong>OpenStreetMap Nominatim</strong> — For place-name search, only when you search for a location to use as a Location Trigger.</li>
         <li><strong>Legal requirements</strong> — If required by law or to protect our legal rights.</li>
       </ul>
 
@@ -281,6 +309,8 @@
         <li><strong>Firebase Firestore</strong> — For optional cloud sync and Groups &amp; Nudges data. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
         <li><strong>Firebase Cloud Messaging &amp; Cloud Functions</strong> — Used only by Groups &amp; Nudges, to deliver nudges to group members' devices. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
         <li><strong>Google AdMob</strong> — For displaying advertisements. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
+        <li><strong>Google Gemini API</strong> — Used only by the optional AI Content feature, with your own API key. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
+        <li><strong>OpenStreetMap Nominatim</strong> — Used only when searching for a place to set as a Location Trigger. <a href="https://osmfoundation.org/wiki/Privacy_Policy">Privacy Policy</a></li>
       </ul>
 
       <h2>Data Retention</h2>
