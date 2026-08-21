@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://amarduwal.github.io/sitemap.xml
+Sitemap: https://amarduwal.github.io/nudgebuzz/sitemap.xml
