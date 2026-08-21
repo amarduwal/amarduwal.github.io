@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NudgeBuzz — Your Personal Notification Engine</title>
-    <meta name="description" content="Custom reminders, real alarms, AI-generated content, location triggers, and group nudges. Completely free, no restrictions." />
+    <meta name="description" content="Custom reminders, to-do lists, real alarms, AI-generated content, location triggers, and group nudges. Completely free, no restrictions." />
     <link rel="icon" href="../images/nudgebuzz/favicon.png" type="image/png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -514,6 +514,10 @@
       <symbol id="i-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" /></symbol>
       <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07l-1.5 1.5" /><path d="M14 11a5 5 0 00-7.07 0L4.1 13.83a5 5 0 007.07 7.07l1.5-1.5" /></symbol>
       <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3" /><path d="M5 10a7 7 0 0014 0" /><line x1="12" y1="19" x2="12" y2="22" /></symbol>
+      <symbol id="i-check-square" viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" /></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24"><polyline points="15 10 20 15 15 20" /><path d="M4 4v7a4 4 0 004 4h12" /></symbol>
+      <symbol id="i-trending-up" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9" /><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z" /></symbol>
     </svg>
 
     <!-- NAV -->
@@ -598,6 +602,37 @@
         </div>
       </section>
 
+      <!-- TO-DO LISTS -->
+      <section>
+        <div class="band-header">
+          <div class="eyebrow">To-Do Lists</div>
+          <h2 class="section-title">Checklists that actually remind you</h2>
+          <p class="section-sub">Not just a list — the same reminder engine behind everything else in NudgeBuzz.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><svg class="icon"><use href="#i-check-square" /></svg></div>
+            <h3>Due-Date Reminders</h3>
+            <p>Give any item its own deadline and get a real reminder for it — plus Alarm Mode, Location Trigger, and custom schedules for the whole list.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg class="icon"><use href="#i-branch" /></svg></div>
+            <h3>Subtasks</h3>
+            <p>Break a task into smaller steps nested right underneath it, each with its own checkbox.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg class="icon"><use href="#i-trending-up" /></svg></div>
+            <h3>Streaks</h3>
+            <p>Complete something on a list two days running and a streak counter kicks in — a small nudge to keep it going.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg class="icon"><use href="#i-edit" /></svg></div>
+            <h3>Natural-Language Quick-Add</h3>
+            <p>Type "call mom tomorrow at 5pm" and NudgeBuzz sets the due date for you — no separate date picker required.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- CONTENT -->
       <section>
         <div class="band-header">
@@ -670,13 +705,13 @@
           <div>
             <div class="eyebrow">Privacy</div>
             <h2 class="section-title">Private by default, not by promise</h2>
-            <p>Every feature above works fully offline. No account, no server, and no third party ever sees your channels or content — unless you choose to turn on cloud sync.</p>
+            <p>Every feature above works fully offline. No account, no server, and no third party ever sees your channels or content.</p>
             <a href="../nudgebuzz-legal/privacy-policy.html" class="trust-link">Read the full privacy policy <svg class="icon" style="width:15px;height:15px"><use href="#i-chevron" /></svg></a>
           </div>
           <ul class="check-list">
             <li><svg class="icon"><use href="#i-check" /></svg>All data stored locally on your device</li>
             <li><svg class="icon"><use href="#i-check" /></svg>No third-party analytics or tracking</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>Cloud sync and Groups &amp; Nudges are opt-in only</li>
+            <li><svg class="icon"><use href="#i-check" /></svg>Groups &amp; Nudges is the only opt-in, sign-in-required feature</li>
             <li><svg class="icon"><use href="#i-check" /></svg>Export everything as a real file, anytime</li>
           </ul>
         </div>
@@ -726,11 +761,15 @@
           </details>
           <details class="faq-item">
             <summary>Does it work without an internet connection?<svg class="icon chev" style="width:18px;height:18px"><use href="#i-chevron" /></svg></summary>
-            <p>Yes. Channels, scheduling, alarms, Timer &amp; Stopwatch, and Location Trigger all run entirely on your device. Only AI content generation and optional cloud sync need a connection.</p>
+            <p>Yes. Channels, scheduling, alarms, Timer &amp; Stopwatch, and Location Trigger all run entirely on your device. Only AI content generation and Groups &amp; Nudges need a connection.</p>
           </details>
           <details class="faq-item">
             <summary>Do I need to create an account?<svg class="icon chev" style="width:18px;height:18px"><use href="#i-chevron" /></svg></summary>
-            <p>No. NudgeBuzz works fully anonymously with local storage. An account is only needed for optional cloud sync or Groups &amp; Nudges.</p>
+            <p>No. NudgeBuzz works fully anonymously with local storage. An account is only needed for Groups &amp; Nudges.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I make to-do lists, not just reminders?<svg class="icon chev" style="width:18px;height:18px"><use href="#i-chevron" /></svg></summary>
+            <p>Yes — To-Do Lists are checklists with due-date reminders per item, subtasks, streaks, and natural-language quick-add ("tomorrow at 5pm"), plus the same Alarm Mode, Location Trigger, and AI generation as every other channel.</p>
           </details>
           <details class="faq-item">
             <summary>How does Location Trigger use my location?<svg class="icon chev" style="width:18px;height:18px"><use href="#i-chevron" /></svg></summary>
@@ -755,6 +794,7 @@
             <p>No paywalls, no feature limits, no account required. Every feature is available to everyone — supported by ads, not subscriptions.</p>
             <div class="free-perks">
               <div class="perk"><svg class="icon"><use href="#i-check" /></svg>Unlimited channels and content</div>
+              <div class="perk"><svg class="icon"><use href="#i-check" /></svg>To-do lists with subtasks &amp; streaks</div>
               <div class="perk"><svg class="icon"><use href="#i-check" /></svg>Location triggers and AI content included</div>
               <div class="perk"><svg class="icon"><use href="#i-check" /></svg>Alarm mode, Timer, Stopwatch &amp; Sports</div>
               <div class="perk"><svg class="icon"><use href="#i-check" /></svg>Local storage — no account required</div>
@@ -773,7 +813,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><img src="../images/nudgebuzz/logo-128.png" alt="" />NudgeBuzz</div>
-          <p class="footer-tagline">Your personal notification engine — reminders, alarms, AI content, and location triggers, all in one place.</p>
+          <p class="footer-tagline">Your personal notification engine — reminders, to-do lists, alarms, AI content, and location triggers, all in one place.</p>
         </div>
         <div class="footer-col">
           <h4>Product</h4>

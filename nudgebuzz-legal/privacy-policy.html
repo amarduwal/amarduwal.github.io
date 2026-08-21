@@ -171,7 +171,7 @@
     <div class="page-header">
       <div class="page-badge">🔒 Legal</div>
       <h1>Privacy Policy</h1>
-      <p class="meta">Last updated: 17 August 2026</p>
+      <p class="meta">Last updated: 21 August 2026</p>
     </div>
 
     <div class="content">
@@ -182,15 +182,15 @@
         use, and safeguard your information when you use the NudgeBuzz mobile application.
       </p>
       <div class="info-box">
-        NudgeBuzz stores all data locally on your device by default. No account is required.
-        Cloud sync is entirely optional and requires your explicit consent.
+        NudgeBuzz stores all data locally on your device by default. No account is required
+        unless you use the optional Groups &amp; Nudges feature.
       </div>
 
       <h2>Information We Collect</h2>
 
       <h3>Information You Provide</h3>
       <ul>
-        <li><strong>Account information</strong> — Email address and display name, only if you create an optional account for cloud sync.</li>
+        <li><strong>Account information</strong> — Email address and display name, only if you create an optional account to use Groups &amp; Nudges.</li>
         <li><strong>User content</strong> — Channels, schedules, text, images, videos, audio, and links you create within the app. Stored locally on your device.</li>
       </ul>
 
@@ -199,12 +199,6 @@
         <li><strong>Device information</strong> — Device type and OS version, used for compatibility only.</li>
         <li><strong>Usage data</strong> — Notification delivery statistics stored locally on your device. Never sent externally.</li>
       </ul>
-
-      <h3>Optional Cloud Sync</h3>
-      <p>
-        If you choose to enable cloud sync, your channels and content are backed up to Firebase Cloud Firestore.
-        This requires your explicit opt-in and can be disabled or deleted at any time.
-      </p>
 
       <h2>Location Data</h2>
       <p>
@@ -215,7 +209,7 @@
       </p>
       <ul>
         <li><strong>What we access</strong> — With your permission, NudgeBuzz accesses your device's precise (GPS) and approximate location, including in the background ("Allow all the time"), so the reminder can still fire while the app is closed.</li>
-        <li><strong>How it's used</strong> — Location is evaluated entirely on-device using Android's FusedLocationProvider and GeofencingClient to detect when you arrive at a saved place. Your location is never sent to us or stored on any server.</li>
+        <li><strong>How it's used</strong> — Arrival is detected entirely on-device using Android's FusedLocationProvider and GeofencingClient; your live location, and the saved place's coordinates, are never sent to us or any server.</li>
         <li><strong>Place search</strong> — When you search for an address or business name to set as a trigger, your search text (not your device location) is sent to OpenStreetMap's Nominatim service to look up matching places.</li>
         <li><strong>Your control</strong> — Location Trigger is enabled per channel. You can disable it anytime in that channel's settings, or revoke the permission in Android Settings, without affecting any other feature.</li>
       </ul>
@@ -254,14 +248,13 @@
       <ul>
         <li>To provide and operate the NudgeBuzz service on your device</li>
         <li>To send you the notifications you have scheduled</li>
-        <li>To sync your data across devices, if you enable cloud sync</li>
+        <li>To operate Groups &amp; Nudges, if you choose to use it</li>
         <li>To provide customer support when you contact us</li>
       </ul>
 
       <h2>Data Storage and Security</h2>
       <ul>
-        <li><strong>Local storage</strong> — All data is stored on your device using AsyncStorage. No external server is involved unless you enable cloud sync.</li>
-        <li><strong>Cloud storage</strong> — If enabled, data is encrypted in transit and stored in Firebase Firestore (Google Cloud).</li>
+        <li><strong>Local storage</strong> — Your channels, content, and settings are stored on your device using AsyncStorage. No external server is involved for this data.</li>
         <li><strong>No analytics</strong> — We do not use any third-party analytics or tracking services.</li>
       </ul>
 
@@ -284,7 +277,7 @@
       <h2>Data Sharing</h2>
       <p>We do <strong>not</strong> sell, trade, or share your personal information with third parties, except:</p>
       <ul>
-        <li><strong>Firebase (Google)</strong> — For authentication and cloud sync, only if you enable it. Governed by Google's privacy policy.</li>
+        <li><strong>Firebase (Google)</strong> — For authentication and data storage, only if you use Groups &amp; Nudges. Governed by Google's privacy policy.</li>
         <li><strong>Google AdMob</strong> — For displaying advertisements, as described in the Advertising section above.</li>
         <li><strong>Google Gemini API</strong> — For AI-generated content, only if you enable it and provide your own API key. Only the topic you type is sent, using your own key.</li>
         <li><strong>OpenStreetMap Nominatim</strong> — For place-name search, only when you search for a location to use as a Location Trigger.</li>
@@ -295,7 +288,7 @@
       <ul>
         <li><strong>Delete your data</strong> — Use Settings → Data &amp; Backup → Clear All Data to remove everything immediately.</li>
         <li><strong>Export your data</strong> — Export all your channels and content in JSON format at any time.</li>
-        <li><strong>Disable cloud sync</strong> — Cloud sync is optional and can be turned off or deleted at any time.</li>
+        <li><strong>Leave Groups &amp; Nudges</strong> — Sign out or leave a group at any time to stop future data collection for that feature.</li>
         <li><strong>Control notifications</strong> — All notification settings are under your control in the app.</li>
       </ul>
 
@@ -306,7 +299,7 @@
       <p>NudgeBuzz uses the following third-party services:</p>
       <ul>
         <li><strong>Firebase Authentication</strong> — For optional user login. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
-        <li><strong>Firebase Firestore</strong> — For optional cloud sync and Groups &amp; Nudges data. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
+        <li><strong>Firebase Firestore</strong> — For Groups &amp; Nudges data. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
         <li><strong>Firebase Cloud Messaging &amp; Cloud Functions</strong> — Used only by Groups &amp; Nudges, to deliver nudges to group members' devices. <a href="https://firebase.google.com/support/privacy">Privacy Policy</a></li>
         <li><strong>Google AdMob</strong> — For displaying advertisements. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
         <li><strong>Google Gemini API</strong> — Used only by the optional AI Content feature, with your own API key. <a href="https://policies.google.com/privacy">Privacy Policy</a></li>
@@ -316,13 +309,13 @@
       <h2>Data Retention</h2>
       <ul>
         <li><strong>Local data</strong> — Stored on your device until you delete it or clear all data.</li>
-        <li><strong>Cloud data</strong> — Stored until you delete your account or disable cloud sync.</li>
+        <li><strong>Cloud data</strong> — Groups &amp; Nudges data is stored until you delete your account or leave the group.</li>
         <li><strong>Account data</strong> — Deleted within 30 days of an account deletion request.</li>
       </ul>
 
       <h2>International Data Transfers</h2>
       <p>
-        If you use cloud sync, your data may be stored on Google Firebase servers in various countries.
+        If you use Groups &amp; Nudges, your data may be stored on Google Firebase servers in various countries.
         Firebase complies with international data protection regulations including GDPR.
       </p>
 
