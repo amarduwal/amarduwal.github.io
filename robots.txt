@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amarduwal.github.io/sitemap.xml
