@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Respite — Privacy Policy</title>
+    <link rel="icon" href="../images/respite/favicon.png" type="image/png" />
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      :root {
+        --primary: #7C9FE5;
+        --bg: #0F0F0F;
+        --surface: #1A1A1A;
+        --border: #2A2A2A;
+        --text: #E8E8E8;
+        --text-muted: #888888;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 40px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(15,15,15,0.9);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--text);
+        text-decoration: none;
+      }
+      .nav-brand img { width: 26px; height: 26px; display: block; border-radius: 6px; }
+      .nav-links { display: flex; gap: 24px; }
+      .nav-links a {
+        color: var(--text-muted);
+        font-size: 13px;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover { color: var(--text); }
+
+      .page-header {
+        padding: 56px 40px 40px;
+        max-width: 780px;
+        margin: 0 auto;
+        border-bottom: 1px solid var(--border);
+      }
+      .page-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+      }
+      .page-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+      .page-header .meta { font-size: 13px; color: var(--text-muted); }
+
+      .content {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 40px 40px 80px;
+      }
+
+      h2 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 44px;
+        margin-bottom: 14px;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      h2::before {
+        content: '';
+        display: block;
+        width: 4px;
+        height: 20px;
+        background: var(--primary);
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 24px;
+        margin-bottom: 10px;
+        color: var(--text);
+      }
+      p { color: var(--text-muted); margin-bottom: 12px; }
+      ul { list-style: none; margin-bottom: 16px; }
+      ul li {
+        color: var(--text-muted);
+        padding: 6px 0 6px 20px;
+        position: relative;
+        font-size: 15px;
+      }
+      ul li::before {
+        content: '\2013';
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: 700;
+      }
+      strong { color: var(--text); font-weight: 600; }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .info-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--primary);
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .footer-note { font-size: 13px; color: var(--text-muted); }
+      .footer-links { display: flex; gap: 20px; }
+      .footer-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; }
+      .footer-links a:hover { color: var(--text); }
+
+      @media (max-width: 640px) {
+        nav, .page-header, .content, footer { padding-left: 20px; padding-right: 20px; }
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 28px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <a href="privacy-policy.html" class="nav-brand"><img src="../images/respite/logo-128.png" alt="" />Respite</a>
+      <div class="nav-links">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-badge">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Last updated: 17 September 2026</p>
+    </div>
+
+    <div class="content">
+
+      <h2>Introduction</h2>
+      <p>
+        Respite is an offline, account-free emotional-regulation toolkit for Android. This policy
+        explains what the app stores and, more importantly, what it never does: collect, transmit,
+        or have access to any of your data.
+      </p>
+      <div class="info-box">
+        Respite has no account, no login, and no server. Everything you log stays only on your
+        device until you export or delete it yourself.
+      </div>
+
+      <h2>Information We Collect</h2>
+      <p>We collect nothing. Respite stores the following locally, on your device only:</p>
+      <ul>
+        <li><strong>Mood entries</strong> &mdash; energy, mood, and optional notes you log</li>
+        <li><strong>Session records</strong> &mdash; breathing, panic timer, and grounding session timestamps and durations (no audio, no transcripts)</li>
+        <li><strong>CBT reflections</strong> &mdash; the thought-record text you write</li>
+        <li><strong>Habits</strong> &mdash; habit names and daily completion marks</li>
+        <li><strong>Hydration logs</strong> &mdash; water intake entries</li>
+        <li><strong>Gratitude entries</strong> &mdash; the text you write</li>
+        <li><strong>App preferences</strong> &mdash; theme, haptics, audio volume, and similar settings</li>
+      </ul>
+      <p>None of this is ever transmitted anywhere. There is no server for it to go to.</p>
+
+      <h2>What Respite Does Not Do</h2>
+      <ul>
+        <li>No analytics or usage tracking of any kind</li>
+        <li>No crash reporting sent off your device</li>
+        <li>No advertising SDK</li>
+        <li>No third-party SDKs that transmit data</li>
+        <li>No network requests for any core feature</li>
+      </ul>
+
+      <h2>In-App Purchases</h2>
+      <p>
+        Respite offers one optional, one-time in-app purchase ("Respite+") using Android's built-in
+        Google Play Billing. Respite never sees or stores your payment details; that exchange
+        happens directly between your device and Google Play, governed by
+        <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. This is the only
+        feature in the app that touches the network at all.
+      </p>
+
+      <h2>Exporting and Deleting Your Data</h2>
+      <p>Inside the app, Settings &rarr; Export &amp; Data lets you:</p>
+      <ul>
+        <li>Export any tool's history as a CSV file</li>
+        <li>Export everything as one JSON backup file</li>
+        <li>Generate a one-page printable summary</li>
+        <li>Delete everything with a single confirmation</li>
+      </ul>
+      <p>
+        Exported files are only created when you tap Export, and only go wherever you choose to
+        send them (save, share, print). Respite itself never transmits them anywhere.
+      </p>
+
+      <h2>Permissions</h2>
+      <p>
+        Respite requests no runtime permissions for its core tools. It does not need camera,
+        microphone, contacts, location, or storage access to function.
+      </p>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        Respite collects no personal information from anyone, including children, because it
+        collects no personal information at all.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        If this policy ever changes, the "Last updated" date above will change with it. Any change
+        that would mean Respite starts collecting data it doesn't collect today would be a
+        different product; that is not planned.
+      </p>
+
+      <h2>Contact Us</h2>
+      <ul>
+        <li>Email: <a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a></li>
+        <li>Website: <a href="https://amarduwal.github.io">amarduwal.github.io</a></li>
+      </ul>
+
+      <p style="margin-top: 32px; color: var(--text-muted);">By using Respite, you consent to this Privacy Policy.</p>
+
+    </div>
+
+    <footer>
+      <div class="footer-note">&copy; 2026 Respite &middot; All rights reserved</div>
+      <div class="footer-links">
+        <a href="terms-of-service.html">Terms</a>
+        <a href="mailto:duwal.amar2006@gmail.com">Contact</a>
+      </div>
+    </footer>
+
+  </body>
+</html>
