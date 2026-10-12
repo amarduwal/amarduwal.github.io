@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support VaultCam</title>
+    <meta name="description" content="VaultCam is free with no ads. If it helps you, you can send an optional gift by Khalti or eSewa in Nepal, or by crypto (BTC or USDT on BNB Smart Chain) or PayPal elsewhere." />
+    <link rel="canonical" href="https://amarduwal.github.io/vaultcam/support.html" />
+    <link rel="icon" href="../images/vaultcam/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#0A0D11" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://amarduwal.github.io/vaultcam/support.html" />
+    <meta property="og:site_name" content="VaultCam" />
+    <meta property="og:title" content="Support VaultCam" />
+    <meta property="og:description" content="VaultCam is free with no ads. An optional gift helps keep it that way." />
+    <meta property="og:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Support VaultCam" />
+    <meta name="twitter:description" content="VaultCam is free with no ads. An optional gift helps keep it that way." />
+    <meta name="twitter:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+      :root {
+        --ink: #0A0D11;
+        --surface: #161B22;
+        --surface-2: #1B222B;
+        --border: #262E38;
+        --outline: #566170;
+        --primary: #2DD4BF;
+        --primary-dark: #0D9488;
+        --amber: #F59E0B;
+        --green: #34D399;
+        --red: #EF4444;
+        --text: #E6EDF3;
+        --text-muted: #9DA7B3;
+        --text-dim: #8A95A3;
+        --radius: 18px;
+        --radius-sm: 12px;
+        --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        font-family: var(--font);
+        background: var(--ink);
+        color: var(--text);
+        min-height: 100vh;
+        line-height: 1.6;
+        font-size: 16px;
+      }
+      img { max-width: 100%; display: block; }
+      a { color: var(--primary); }
+      :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+      .skip-link {
+        position: fixed; top: -60px; left: 16px; z-index: 1000;
+        background: var(--primary); color: var(--ink);
+        padding: 10px 18px; border-radius: 10px; font-weight: 700; font-size: 14px;
+        transition: top 0.15s;
+      }
+      .skip-link:focus { top: 16px; }
+
+      /* NAV */
+      nav {
+        position: sticky; top: 0; z-index: 100;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 14px 40px;
+        background: rgba(10,13,17,0.86);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-brand { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .nav-brand img { width: 30px; height: 30px; border-radius: 8px; }
+      .nav-links { display: flex; align-items: center; gap: 28px; }
+      .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+      .nav-links a:hover { color: var(--text); }
+
+      /* HEADER */
+      .page-header { max-width: 980px; margin: 0 auto; padding: 72px 40px 36px; }
+      .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; color: var(--primary); text-transform: uppercase; margin-bottom: 14px; }
+      .page-header h1 { font-size: clamp(32px, 4.6vw, 48px); font-weight: 800; line-height: 1.12; letter-spacing: -1px; margin-bottom: 18px; }
+      .page-header p { font-size: 17px; color: var(--text-muted); max-width: 640px; line-height: 1.7; }
+
+      /* NOTE BOX */
+      .wrap { max-width: 980px; margin: 0 auto; padding: 0 40px; }
+      .note-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--amber);
+        border-radius: 14px;
+        padding: 20px 24px;
+      }
+      .note-box h2 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+      .note-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+      .note-box li { position: relative; padding-left: 18px; font-size: 14.5px; color: var(--text-muted); }
+      .note-box li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+      .note-box strong { color: var(--text); }
+
+      /* DONATION SECTIONS */
+      section { max-width: 980px; margin: 0 auto; padding: 56px 40px 8px; }
+      .section-title { font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+      .section-sub { font-size: 15.5px; color: var(--text-muted); margin-bottom: 28px; }
+      .qr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+      .qr-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+      .qr-card img { width: 100%; height: auto; aspect-ratio: 1; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--outline); }
+      .qr-card h3 { font-size: 17px; font-weight: 700; }
+      .qr-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+      .addr { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; overflow-wrap: anywhere; }
+      .warn { font-size: 13px; color: var(--amber); }
+
+      .thanks { max-width: 980px; margin: 0 auto; padding: 56px 40px 72px; }
+      .thanks-card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 36px; }
+      .thanks-card h2 { font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+      .thanks-card p { color: var(--text-muted); margin-bottom: 10px; max-width: 680px; }
+      .btn-secondary {
+        display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
+        padding: 12px 22px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 15px;
+        background: var(--surface-2); color: var(--text); border: 1px solid var(--outline);
+      }
+      .btn-secondary:hover { filter: brightness(1.1); }
+
+      /* FOOTER */
+      footer { border-top: 1px solid var(--border); padding: 28px 40px; max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+      .footer-note { font-size: 13px; color: var(--text-dim); }
+      .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+      .footer-links a { color: var(--text-dim); font-size: 13px; text-decoration: none; }
+      .footer-links a:hover { color: var(--text); }
+
+      @media (max-width: 640px) {
+        nav { padding: 14px 16px; }
+        .nav-links { display: none; }
+        .page-header, .wrap, section, .thanks, footer { padding-left: 16px; padding-right: 16px; }
+        .page-header { padding-top: 48px; }
+        .thanks-card { padding: 24px 20px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav>
+      <a href="./" class="nav-brand"><img src="../images/vaultcam/logo-128.png" alt="" />VaultCam</a>
+      <div class="nav-links">
+        <a href="./">About VaultCam</a>
+        <a href="../vaultcam-legal/privacy-policy.html">Privacy</a>
+        <a href="../vaultcam-legal/terms-of-service.html">Terms</a>
+        <a href="https://amarduwal.github.io/">amarduwal.github.io</a>
+      </div>
+    </nav>
+
+    <main id="main">
+
+      <div class="page-header">
+        <div class="eyebrow">Support</div>
+        <h1>Support VaultCam</h1>
+        <p>
+          VaultCam is free, with no ads, no paywalls, and no account. If it has been useful to you and you
+          want to help keep it that way, you can send a small gift below. It is completely optional.
+        </p>
+      </div>
+
+      <div class="wrap">
+        <div class="note-box">
+          <h2>Before you give</h2>
+          <ul>
+            <li><strong>A donation is a voluntary gift, not a purchase.</strong> It does not add features, remove limits, or buy priority support. Every VaultCam feature is free for everyone.</li>
+            <li><strong>Donations are non-refundable.</strong> Please send only what you are comfortable giving.</li>
+            <li><strong>Crypto transfers cannot be reversed.</strong> Check the address and the network in your wallet before you send. Funds sent to the wrong address or network are lost.</li>
+            <li>Each payment is handled by the service you use (Khalti, eSewa, PayPal, or a crypto network), under that service's own terms and privacy policy.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IN NEPAL -->
+      <section id="nepal" aria-labelledby="nepal-title">
+        <h2 class="section-title" id="nepal-title">In Nepal</h2>
+        <p class="section-sub">Scan with your Khalti or eSewa app.</p>
+        <div class="qr-grid">
+          <div class="qr-card">
+            <img src="../images/vaultcam/qr-khalti.png" alt="Khalti QR code for donations to VaultCam" width="600" height="600" loading="lazy" />
+            <h3>Khalti</h3>
+            <p>Open Khalti, tap Scan, and point it at this code.</p>
+          </div>
+          <div class="qr-card">
+            <img src="../images/vaultcam/qr-esewa.png" alt="eSewa QR code for donations to VaultCam" width="600" height="600" loading="lazy" />
+            <h3>eSewa</h3>
+            <p>Open eSewa, tap Scan, and point it at this code.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVERYWHERE ELSE -->
+      <section id="everywhere" aria-labelledby="everywhere-title">
+        <h2 class="section-title" id="everywhere-title">Everywhere else</h2>
+        <p class="section-sub">Scan with your wallet or the PayPal app.</p>
+        <div class="qr-grid">
+          <div class="qr-card">
+            <img src="../images/vaultcam/qr-crypto.png" alt="Crypto address QR code (BNB Smart Chain, BEP20) for donations to VaultCam" width="640" height="640" loading="lazy" />
+            <h3>Crypto: BTC or USDT</h3>
+            <p>Scan with your wallet. Send BTC (BEP20) or USDT (BEP20) only.</p>
+            <p class="addr">Network: BNB Smart Chain (BEP20)</p>
+            <p class="addr">0x47c4dc897a30c1a0a56f1acc8847fa6e1adec310</p>
+            <p class="warn">Use BNB Smart Chain (BEP20) only. This is not a Bitcoin-network address: BTC sent on the Bitcoin network, or any coin sent on another network, is lost and cannot be reversed.</p>
+          </div>
+          <div class="qr-card">
+            <img src="../images/vaultcam/qr-paypal.png" alt="PayPal QR code for donations to VaultCam" width="600" height="600" loading="lazy" />
+            <h3>PayPal</h3>
+            <p>Scan with your phone camera or the PayPal app.</p>
+            <p><a href="https://www.paypal.com/qrcodes/p2pqrc/JCRFQ3UNN9KY2" rel="noopener" target="_blank">Open PayPal</a></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="thanks">
+        <div class="thanks-card">
+          <h2>Thank you</h2>
+          <p>
+            Whether you give or not, VaultCam stays free and works the same. Telling someone who needs a private,
+            offline recorder about it helps too.
+          </p>
+          <p>
+            The app itself has no internet access. If you open this page from VaultCam, it opens in your browser,
+            outside the app. VaultCam does not know whether you donated.
+          </p>
+          <p>Questions: <a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a></p>
+          <a href="./" class="btn-secondary">&larr; Back to VaultCam</a>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="footer-note">&copy; 2026 Amar Duwal &middot; VaultCam</div>
+      <div class="footer-links">
+        <a href="./">VaultCam</a>
+        <a href="../vaultcam-legal/privacy-policy.html">Privacy</a>
+        <a href="../vaultcam-legal/terms-of-service.html">Terms</a>
+        <a href="mailto:duwal.amar2006@gmail.com">Contact</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

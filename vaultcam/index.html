@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaultCam: Offline Encrypted Audio, Video and Screen Recorder for Android</title>
+    <meta name="description" content="VaultCam records audio, video, and your screen into an encrypted vault on your Android phone. AES-256 encryption, no internet permission, no account, no ads. Recording is always shown with a notification." />
+    <link rel="canonical" href="https://amarduwal.github.io/vaultcam/" />
+    <link rel="icon" href="../images/vaultcam/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#0A0D11" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://amarduwal.github.io/vaultcam/" />
+    <meta property="og:site_name" content="VaultCam" />
+    <meta property="og:title" content="VaultCam: Offline Encrypted Recorder for Android" />
+    <meta property="og:description" content="Record audio, video, and your screen into an encrypted vault. No internet permission, no account, no ads." />
+    <meta property="og:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="VaultCam: Offline Encrypted Recorder for Android" />
+    <meta name="twitter:description" content="Record audio, video, and your screen into an encrypted vault. No internet permission, no account, no ads." />
+    <meta name="twitter:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "VaultCam",
+      "operatingSystem": "Android 8.0 or later",
+      "applicationCategory": "UtilitiesApplication",
+      "description": "Offline, encrypted recorder for audio, video, and the screen. Recordings are encrypted with AES-256-GCM as they are saved and stay on the phone. No internet permission, no account, no ads. Recording is always shown with a notification.",
+      "url": "https://amarduwal.github.io/vaultcam/",
+      "image": "https://amarduwal.github.io/images/vaultcam/logo-512.png",
+      "author": { "@type": "Person", "name": "Amar Duwal" },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "downloadUrl": "https://play.google.com/store/apps/details?id=org.vaultcam.app"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+      :root {
+        --ink: #0A0D11;
+        --surface: #161B22;
+        --surface-2: #1B222B;
+        --border: #262E38;
+        --outline: #566170;
+        --primary: #2DD4BF;
+        --primary-dark: #0D9488;
+        --primary-light: #99F6E4;
+        --amber: #F59E0B;
+        --green: #34D399;
+        --red: #EF4444;
+        --text: #E6EDF3;
+        --text-muted: #9DA7B3;
+        --text-dim: #8A95A3;
+        --radius: 18px;
+        --radius-sm: 12px;
+        --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: var(--font);
+        background: var(--ink);
+        color: var(--text);
+        min-height: 100vh;
+        line-height: 1.6;
+        font-size: 16px;
+      }
+
+      img, svg { max-width: 100%; display: block; }
+      a { color: inherit; }
+
+      .skip-link {
+        position: fixed;
+        top: -60px;
+        left: 16px;
+        z-index: 1000;
+        background: var(--primary);
+        color: var(--ink);
+        padding: 10px 18px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        transition: top 0.15s;
+      }
+      .skip-link:focus { top: 16px; }
+      :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+      /* NAV */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 40px;
+        background: rgba(10,13,17,0.86);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-brand { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .nav-brand img { width: 30px; height: 30px; border-radius: 8px; }
+      .nav-links { display: flex; align-items: center; gap: 28px; }
+      .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+      .nav-links a:hover { color: var(--text); }
+      .nav-home { font-size: 13px !important; }
+      .nav-cta { background: var(--primary); color: var(--ink) !important; padding: 9px 20px; border-radius: 24px; font-weight: 700 !important; transition: filter 0.2s !important; }
+      .nav-cta:hover { filter: brightness(1.08); }
+
+      /* BUTTONS */
+      .btn-primary, .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 13px 24px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 15px;
+        transition: transform 0.15s, filter 0.2s, background 0.2s;
+        border: 1px solid transparent;
+        line-height: 1.25;
+      }
+      .btn-primary { background: var(--primary); color: var(--ink); }
+      .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); }
+      .btn-secondary { background: var(--surface); color: var(--text); border-color: var(--outline); }
+      .btn-secondary:hover { background: var(--surface-2); transform: translateY(-1px); }
+      .btn-stack { display: flex; flex-direction: column; }
+      .btn-stack small { font-size: 11.5px; font-weight: 600; opacity: 0.8; letter-spacing: 0.3px; }
+      .soon { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--amber); }
+
+      /* HERO */
+      .hero {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 88px 40px 40px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 48px;
+        align-items: center;
+      }
+      .hero-eyebrow {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        color: var(--primary);
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); }
+      .hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 22px; }
+      .hero h1 .highlight { color: var(--primary); }
+      .hero-sub { font-size: 17px; color: var(--text-muted); max-width: 500px; margin-bottom: 34px; line-height: 1.7; }
+      .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+      .trust-strip {
+        display: flex; flex-wrap: wrap; gap: 10px 18px;
+        padding-top: 26px; border-top: 1px solid var(--border);
+        font-size: 12px; letter-spacing: 0.5px; color: var(--text-dim); font-weight: 600;
+      }
+
+      /* HERO VISUAL */
+      .hero-visual { position: relative; }
+      .mark-tile {
+        position: relative;
+        width: 100%;
+        max-width: 340px;
+        aspect-ratio: 1;
+        margin: 0 auto;
+        border-radius: 72px;
+        background: radial-gradient(circle at 50% 46%, #222B36 0%, #0E1116 70%);
+        border: 1px solid var(--border);
+        box-shadow: 0 30px 60px -20px rgba(0,0,0,0.7), 0 0 80px -30px rgba(45,212,191,0.35);
+        display: grid;
+        place-items: center;
+      }
+      .mark-tile svg { width: 72%; height: auto; }
+      .hero-chip {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        padding: 10px 14px;
+        box-shadow: 0 14px 34px -14px rgba(0,0,0,0.7);
+        width: 210px;
+        font-size: 12px;
+      }
+      .hero-chip strong { display: block; font-size: 13px; font-weight: 700; }
+      .hero-chip span { display: block; font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+      .hero-chip .dotc { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+      @media (min-width: 900px) {
+        .hero-chip.c1 { top: 4%; left: -10%; }
+        .hero-chip.c2 { bottom: 6%; right: -10%; }
+      }
+      @media (max-width: 899px) {
+        .hero-chip { position: static; width: auto; margin-top: 12px; }
+      }
+
+      /* SECTIONS */
+      section { padding: 76px 40px; max-width: 1180px; margin: 0 auto; }
+      .band-header { max-width: 660px; margin-bottom: 44px; }
+      .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; color: var(--primary); text-transform: uppercase; margin-bottom: 12px; }
+      .section-title { font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.5px; }
+      .section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.7; }
+
+      /* FEATURE GRID */
+      .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+      .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; transition: transform 0.2s, border-color 0.2s; }
+      .feature-card:hover { transform: translateY(-3px); border-color: var(--primary-dark); }
+      .feature-icon {
+        width: 46px; height: 46px; border-radius: 13px; margin-bottom: 18px;
+        display: grid; place-items: center;
+        background: rgba(45,212,191,0.12);
+        color: var(--primary);
+      }
+      .feature-icon.amber { background: rgba(245,158,11,0.12); color: var(--amber); }
+      .feature-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+      .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+      /* NOTICE (always shown) */
+      .notice-panel {
+        display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--amber);
+        border-radius: 24px;
+        padding: 44px;
+      }
+      .notice-panel .eyebrow { color: var(--amber); }
+      .notice-panel .section-title { font-size: clamp(24px, 3vw, 32px); }
+      .notice-panel p { color: var(--text-muted); margin-bottom: 16px; line-height: 1.7; }
+      .notif-mock {
+        background: var(--surface-2);
+        border: 1px solid var(--outline);
+        border-radius: 18px;
+        padding: 18px 20px;
+        align-self: center;
+      }
+      .notif-top { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--text-muted); margin-bottom: 10px; }
+      .notif-top img { width: 20px; height: 20px; border-radius: 5px; }
+      .rec-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 8px var(--amber); flex-shrink: 0; }
+      .notif-title { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+      .notif-body { font-size: 13.5px; color: var(--text-muted); margin-bottom: 14px; }
+      .notif-actions { display: flex; gap: 22px; font-size: 13.5px; font-weight: 700; color: var(--primary); }
+      .law-box {
+        margin-top: 18px;
+        background: rgba(245,158,11,0.08);
+        border: 1px solid rgba(245,158,11,0.35);
+        border-radius: 12px;
+        padding: 14px 16px;
+        font-size: 14px;
+        color: var(--text);
+      }
+
+      /* TRUST PANEL */
+      .trust-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 44px; }
+      .trust-panel .section-title { font-size: clamp(24px, 3vw, 32px); }
+      .trust-panel p { color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+      .trust-link { display: inline-flex; align-items: center; gap: 6px; color: var(--primary); font-weight: 700; text-decoration: none; font-size: 14px; }
+      .trust-link:hover { text-decoration: underline; }
+      .check-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+      .check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14.5px; color: var(--text-muted); }
+      .check-list li::before { content: '\2713'; color: var(--green); font-weight: 800; }
+
+      /* PERMISSIONS */
+      .perm-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+      .perm-table th, .perm-table td { text-align: left; padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14.5px; vertical-align: top; }
+      .perm-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-dim); font-weight: 700; background: var(--surface-2); }
+      .perm-table td:first-child { font-weight: 600; white-space: nowrap; }
+      .perm-table td:last-child { color: var(--text-muted); }
+      .perm-table tr:last-child td { border-bottom: none; }
+      .perm-note { margin-top: 16px; font-size: 14px; color: var(--text-muted); }
+
+      /* HOW IT WORKS */
+      .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+      .step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+      .step-num { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 14px; }
+      .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+      .step p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+      /* FAQ */
+      .faq-list { display: flex; flex-direction: column; gap: 10px; }
+      .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; }
+      .faq-item summary { cursor: pointer; list-style: none; padding: 18px 22px; font-weight: 700; font-size: 15px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary .chev { transition: transform 0.2s; color: var(--text-dim); font-weight: 700; }
+      .faq-item[open] summary .chev { transform: rotate(180deg); }
+      .faq-item p { padding: 0 22px 20px; font-size: 14.5px; color: var(--text-muted); line-height: 1.7; }
+      .faq-item a { color: var(--primary); }
+
+      /* FREE BANNER */
+      .free-banner {
+        position: relative; overflow: hidden;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 52px 44px;
+        display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;
+      }
+      .free-banner h2 { font-size: 30px; font-weight: 800; margin-bottom: 10px; }
+      .free-banner p { font-size: 16px; color: var(--text-muted); max-width: 460px; }
+      .free-perks { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+      .perk { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+      .perk::before { content: '\2713'; color: var(--green); font-weight: 800; }
+      .banner-actions { display: flex; flex-direction: column; gap: 12px; }
+
+      /* FOOTER */
+      footer { border-top: 1px solid var(--border); padding: 56px 40px 32px; max-width: 1180px; margin: 0 auto; }
+      .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 40px; }
+      .footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; margin-bottom: 10px; }
+      .footer-brand img { width: 26px; height: 26px; border-radius: 6px; }
+      .footer-tagline { font-size: 13.5px; color: var(--text-dim); max-width: 260px; line-height: 1.6; }
+      .footer-col h4 { font-size: 13px; font-weight: 700; margin-bottom: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+      .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+      .footer-col a { color: var(--text-dim); text-decoration: none; font-size: 14px; transition: color 0.2s; overflow-wrap: anywhere; }
+      .footer-col a:hover { color: var(--text); }
+      .footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; font-size: 13px; color: var(--text-dim); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+      .footer-bottom a { color: var(--text-dim); }
+
+      @media (max-width: 860px) {
+        .hero { grid-template-columns: 1fr; padding-top: 60px; }
+        .trust-panel, .notice-panel { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 640px) {
+        nav { padding: 14px 16px; }
+        .nav-links { display: none; }
+        .hero, section, footer { padding-left: 16px; padding-right: 16px; }
+        .trust-panel, .notice-panel { padding: 28px 20px; }
+        .free-banner { padding: 32px 20px; }
+        .banner-wrap { padding-left: 16px !important; padding-right: 16px !important; }
+        .footer-grid { grid-template-columns: 1fr; }
+        .perm-table th, .perm-table td { padding: 12px 14px; }
+        .perm-table td:first-child { white-space: normal; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Icon sprite (stroke icons, 24px grid) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4z"/></symbol>
+      <symbol id="i-screen" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+      <symbol id="i-shake" viewBox="0 0 24 24"><rect x="8" y="4" width="8" height="16" rx="1.5"/><path d="M3 8v8M21 8v8M5.5 10v4M18.5 10v4"/></symbol>
+      <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/></symbol>
+      <symbol id="i-tile" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+      <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+      <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3L21 2M16 7l3 3M18.5 4.5l2 2"/></symbol>
+      <symbol id="i-gallery-off" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 16l5-5 4 4M4 4l16 16"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></symbol>
+      <symbol id="i-cut" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.2 8.2L20 20M8.2 15.8L20 4"/></symbol>
+      <symbol id="i-compress" viewBox="0 0 24 24"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></symbol>
+      <symbol id="i-export" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 16v-6M9 13l3-3 3 3"/></symbol>
+      <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+      <symbol id="i-rename" viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></symbol>
+      <symbol id="i-hash" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"/></symbol>
+      <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+      <symbol id="i-file-check" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></symbol>
+      <symbol id="i-restore" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8M21 3v5h-5"/></symbol>
+    </svg>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <nav>
+      <a href="./" class="nav-brand"><img src="../images/vaultcam/logo-128.png" alt="" />VaultCam</a>
+      <div class="nav-links">
+        <a href="#record">Record</a>
+        <a href="#vault">Vault</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a href="support.html">Support</a>
+        <a href="https://amarduwal.github.io/" class="nav-home">amarduwal.github.io</a>
+        <a href="#get" class="nav-cta">Get VaultCam</a>
+      </div>
+    </nav>
+
+    <main id="main">
+
+      <!-- HERO -->
+      <div class="hero">
+        <div>
+          <div class="hero-eyebrow"><span class="dot"></span>Offline encrypted recorder for Android</div>
+          <h1>Record it. Encrypt it. <span class="highlight">Keep it on your phone.</span></h1>
+          <p class="hero-sub">
+            VaultCam records audio, video, and your screen straight into an encrypted vault on your phone.
+            The app has no internet permission, so it cannot send your recordings anywhere.
+          </p>
+          <div class="hero-buttons" id="get">
+            <!-- Play listing is not published yet. Switch the label when it goes live. -->
+            <a href="https://play.google.com/store/apps/details?id=org.vaultcam.app" class="btn-primary" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A0D11" aria-hidden="true"><path d="M3.18 23.76c.3.17.64.24.98.2l13.2-12-2.46-2.46L3.18 23.76zm17.6-13.67c.38-.34.6-.84.6-1.4 0-.55-.22-1.05-.6-1.4l-2.44-2.22-2.7 2.46 2.7 2.46 2.44-2.22zM4.16.24L3.18.04a1.16 1.16 0 0 0-.98.2L14.5 12.46 16.96 10 4.16.24z"/></svg>
+              <span class="btn-stack"><small>Coming soon to</small>Google Play</span>
+            </a>
+            <!-- TODO(owner): link the APK file (for the build distributed outside Google Play) when it is ready. -->
+            <span class="btn-secondary" aria-disabled="true">
+              <span class="btn-stack"><small class="soon">Coming soon</small>Direct APK download</span>
+            </span>
+          </div>
+          <div class="trust-strip">
+            <span>NO INTERNET PERMISSION</span><span>&middot;</span>
+            <span>AES-256 ENCRYPTED</span><span>&middot;</span>
+            <span>NO ACCOUNT</span><span>&middot;</span>
+            <span>NO ADS</span><span>&middot;</span>
+            <span>ANDROID 8.0+</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="mark-tile">
+            <svg viewBox="-160 -160 320 320" role="img" aria-label="VaultCam logo: a camera lens inside a vault door">
+              <circle r="140" fill="none" stroke="#2DD4BF" stroke-width="22" stroke-dasharray="197.9 22" stroke-dashoffset="98.9"/>
+              <path fill="#0D9488" fill-rule="evenodd" d="M-92 0A92 92 0 1 0 92 0A92 92 0 1 0-92 0ZM-10 7.8A24 24 0 1 1 10 7.8L18 46H-18Z"/>
+              <path d="M-62-22.6A66 66 0 0 1-22.6-62" fill="none" stroke="#99F6E4" stroke-width="10" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hero-chip c1"><span class="dotc" style="background:var(--primary)"></span><div><strong>AES-256-GCM</strong><span>Encrypted as it is saved</span></div></div>
+          <div class="hero-chip c2"><span class="dotc" style="background:var(--amber)"></span><div><strong>Recording notification</strong><span>Always shown while recording</span></div></div>
+        </div>
+      </div>
+
+      <!-- RECORD -->
+      <section id="record">
+        <div class="band-header">
+          <div class="eyebrow">Record</div>
+          <h2 class="section-title">Audio, video, and your screen.</h2>
+          <p class="section-sub">Pick what to record and tap the big button. You can leave the app or turn the screen off, and recording keeps going.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-mic"/></svg></div>
+            <h3>Audio</h3>
+            <p>Records with the screen off or while you use other apps. Lecture mode starts an audio recording in one tap.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-video"/></svg></div>
+            <h3>Video</h3>
+            <p>Back or front camera, 720p, 1080p, or 4K, at 24, 30, or 60 fps where your phone supports it. Evidence mode starts back camera video in one tap.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-screen"/></svg></div>
+            <h3>Screen, Direct</h3>
+            <p>Records your screen. A small floating panel shows the time with pause and stop. It appears in the recording, so you can collapse it to a dot.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-pen"/></svg></div>
+            <h3>Screen, Presentation</h3>
+            <p>A 3 second countdown, then drawing tools and an optional camera bubble while you walk through something on screen.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRIGGERS -->
+      <section id="triggers">
+        <div class="band-header">
+          <div class="eyebrow">Triggers</div>
+          <h2 class="section-title">Start recording without opening the app.</h2>
+          <p class="section-sub">Triggers are on by default and are armed again each time you unlock your phone. Every trigger shows the recording notification. Turn any of them off in Settings.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-shake"/></svg></div>
+            <h3>Shake</h3>
+            <p>Shake the phone to start, and again to stop. 3 shakes by default, or choose 2 to 4.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-plug"/></svg></div>
+            <h3>Charger</h3>
+            <p>Plug in the charger to start recording, unplug to stop.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-tile"/></svg></div>
+            <h3>Quick Settings tile</h3>
+            <p>Swipe down and tap the VaultCam tile. It works on the lock screen. Stopping from there asks you to unlock the phone.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-clock"/></svg></div>
+            <h3>Scheduled time</h3>
+            <p>Pick a time in Settings and VaultCam starts recording then.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-volume"/></svg></div>
+            <h3>Volume key hold</h3>
+            <p>On Android 13 and older, hold a volume key for 2 seconds on the lock screen to start.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALWAYS SHOWN -->
+      <section id="always-shown">
+        <div class="notice-panel">
+          <div>
+            <div class="eyebrow">Always shown</div>
+            <h2 class="section-title">VaultCam always shows that it is recording.</h2>
+            <p>While VaultCam records, a notification says so, and Android shows its own camera or microphone indicator. This is true for every recording, including the ones a trigger starts. VaultCam is not made for recording people without their knowledge.</p>
+            <div class="law-box">
+              <strong>Recording laws differ by place.</strong> Some places require consent from everyone being recorded. You are responsible for following the laws where you are.
+            </div>
+          </div>
+          <div class="notif-mock" aria-label="Example of the recording notification">
+            <div class="notif-top"><img src="../images/vaultcam/logo-128.png" alt="" />VaultCam &middot; now</div>
+            <div class="notif-title"><span class="rec-dot"></span>VaultCam is recording audio</div>
+            <div class="notif-body">Recording is always shown while it is on.</div>
+            <div class="notif-actions"><span>Pause</span><span>Stop</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VAULT -->
+      <section id="vault">
+        <div class="band-header">
+          <div class="eyebrow">Vault</div>
+          <h2 class="section-title">Encrypted as it is saved.</h2>
+          <p class="section-sub">Every recording is encrypted with AES-256-GCM while it is being written, in storage only VaultCam can read.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-lock"/></svg></div>
+            <h3>PIN or fingerprint</h3>
+            <p>The vault opens with your PIN or your fingerprint. It locks again when you leave the app, or right away with the lock button.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-key"/></svg></div>
+            <h3>Key tied to your phone</h3>
+            <p>The PIN key is bound to your phone's secure hardware. After 4 wrong PINs, entry pauses for a while, longer each time.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-gallery-off"/></svg></div>
+            <h3>Not in your gallery</h3>
+            <p>Recordings never appear in your gallery or in other apps. Recording names are encrypted too.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon amber"><svg aria-hidden="true"><use href="#i-key"/></svg></div>
+            <h3>No recovery</h3>
+            <p>There is no backdoor and no reset. If you forget your PIN, nobody can open the recordings, including us.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDIT AND SHARE -->
+      <section id="edit">
+        <div class="band-header">
+          <div class="eyebrow">Play, edit, share</div>
+          <h2 class="section-title">Work with recordings on your phone.</h2>
+          <p class="section-sub">Nothing is uploaded to do any of this. Copies you export or share leave the vault and are not encrypted, so VaultCam removes identifying details by default.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-play"/></svg></div>
+            <h3>Player</h3>
+            <p>Seek, skip 10 seconds, and change the playback speed.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-cut"/></svg></div>
+            <h3>Trim and compress</h3>
+            <p>Save a shorter or smaller copy in the vault, without uploading anything.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-export"/></svg></div>
+            <h3>Export a copy</h3>
+            <p>Save a copy to a folder you choose. Video exports remove the date, location, and device details by default.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-share"/></svg></div>
+            <h3>Share to one app</h3>
+            <p>Send a copy to one app you pick, with a generic file name and details removed. VaultCam deletes its copy within about an hour.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-rename"/></svg></div>
+            <h3>Rename</h3>
+            <p>Give a recording a name you will recognize. The name is stored encrypted.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVIDENCE -->
+      <section id="evidence">
+        <div class="band-header">
+          <div class="eyebrow">Evidence tools</div>
+          <h2 class="section-title">Show that a recording has not changed.</h2>
+          <p class="section-sub">Useful when a recording might matter later: an incident, a dispute, or a meeting you need a record of.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-hash"/></svg></div>
+            <h3>SHA-256 fingerprint</h3>
+            <p>A fingerprint of each file is stored when it is saved.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-list"/></svg></div>
+            <h3>Session log</h3>
+            <p>Each recording keeps a log of its session, viewable in Details.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-file-check"/></svg></div>
+            <h3>Chain-of-custody PDF</h3>
+            <p>Rechecks the file against its stored fingerprint at export, and shows whether it still matches.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg aria-hidden="true"><use href="#i-restore"/></svg></div>
+            <h3>Recovered recordings</h3>
+            <p>If the app is closed mid-recording, what was recorded is saved on the next unlock and marked as recovered.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRIVACY -->
+      <section id="privacy">
+        <div class="trust-panel">
+          <div>
+            <div class="eyebrow">Privacy</div>
+            <h2 class="section-title">This build has no internet permission.</h2>
+            <p>VaultCam cannot send your recordings anywhere, and it does not try. There is no account, no server, and nothing that reports back. We collect no data at all.</p>
+            <a href="../vaultcam-legal/privacy-policy.html" class="trust-link">Read the full privacy policy &rarr;</a>
+          </div>
+          <ul class="check-list">
+            <li>Recordings stay on your phone, encrypted</li>
+            <li>No analytics, no ads, no crash reports leave the phone</li>
+            <li>Android backups do not copy the vault</li>
+            <li>Uninstalling VaultCam deletes everything it stored</li>
+            <li>Exports and shares happen only when you choose them</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PERMISSIONS -->
+      <section id="permissions">
+        <div class="band-header">
+          <div class="eyebrow">Permissions</div>
+          <h2 class="section-title">What VaultCam asks for, and why.</h2>
+          <p class="section-sub">Each permission is asked for when you first need it. Settings, Privacy audit in the app lists them too.</p>
+        </div>
+        <table class="perm-table">
+          <thead><tr><th scope="col">Permission</th><th scope="col">Why</th></tr></thead>
+          <tbody>
+            <tr><td>Microphone</td><td>To record audio, only while you are recording.</td></tr>
+            <tr><td>Camera</td><td>To record video, only while you are recording.</td></tr>
+            <tr><td>Notifications</td><td>To show that recording is on.</td></tr>
+            <tr><td>Foreground service</td><td>To keep recording when you leave the app (microphone, camera, and screen capture types), and to keep triggers armed (special use type).</td></tr>
+            <tr><td>Screen capture</td><td>Asked by Android each time you start a screen recording.</td></tr>
+            <tr><td>Display over other apps</td><td>Optional. Only for the floating panel and the Presentation drawing tools.</td></tr>
+            <tr><td>Exact alarms</td><td>To start a scheduled recording on time.</td></tr>
+            <tr><td>Biometric</td><td>To open the vault with your fingerprint, if you turn it on.</td></tr>
+          </tbody>
+        </table>
+        <p class="perm-note">No internet, no location, no contacts, and no storage permission.</p>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how-it-works">
+        <div class="band-header">
+          <div class="eyebrow">Guide</div>
+          <h2 class="section-title">From install to your first recording.</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">01</div>
+            <h3>Set a PIN</h3>
+            <p>It opens your vault. Write it down somewhere safe, because it cannot be recovered.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <h3>Pick what to record</h3>
+            <p>Audio, Video, or Screen on the Record tab.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <h3>Tap record</h3>
+            <p>The notification shows that recording is on. Tap Stop in the app or in the notification when you are done.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <h3>Open the vault</h3>
+            <p>Your recording is already encrypted and waiting there.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="band-header">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="section-title">Questions people ask</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Is VaultCam free?<span class="chev">&#9660;</span></summary>
+            <p>Yes. Every feature and every quality setting is included. No ads, no paywalls, and no subscription. If you want to help, there is an optional <a href="support.html">Support page</a>.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does it need an internet connection?<span class="chev">&#9660;</span></summary>
+            <p>No. The app does not have the internet permission, so it cannot connect to anything. Everything happens on your phone.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Will people know I am recording?<span class="chev">&#9660;</span></summary>
+            <p>A notification shows whenever VaultCam is recording, and Android shows its camera or microphone indicator. This is true for every recording. Recording laws differ by place, and you are responsible for following them.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What if I forget my PIN?<span class="chev">&#9660;</span></summary>
+            <p>Your recordings cannot be recovered. There is no reset and no backdoor, for anyone. That is what keeps them safe if someone else has your phone.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I get a recording out of the vault?<span class="chev">&#9660;</span></summary>
+            <p>Yes. Export saves a copy to a folder you choose, and Share sends a copy to one app you pick. These copies are not encrypted, and once they leave VaultCam the app or service that receives them decides what happens next, including its own cloud backups.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do recordings show up in my gallery?<span class="chev">&#9660;</span></summary>
+            <p>No. They stay in VaultCam's own storage, encrypted. Only a copy you export or share leaves the app.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Which phones does it work on?<span class="chev">&#9660;</span></summary>
+            <p>Android 8.0 and later. Video quality and frame rate options depend on what your phone's camera supports.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where can I download it?<span class="chev">&#9660;</span></summary>
+            <p>VaultCam is coming soon to Google Play. A direct APK download for people who do not use Google Play is also coming soon, on this page.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- FREE BANNER -->
+      <div class="banner-wrap" style="max-width:1180px; margin: 0 auto; padding: 0 40px 80px">
+        <div class="free-banner">
+          <div>
+            <h2>Free. No ads.</h2>
+            <p>Every recorder, trigger, and vault feature, free. No account to make and nothing to sign in to.</p>
+            <div class="free-perks">
+              <div class="perk">Audio, video, and screen recording</div>
+              <div class="perk">AES-256-GCM encrypted vault</div>
+              <div class="perk">Evidence tools and custody PDF</div>
+              <div class="perk">No internet permission, no analytics</div>
+            </div>
+          </div>
+          <div class="banner-actions">
+            <a href="https://play.google.com/store/apps/details?id=org.vaultcam.app" class="btn-primary" target="_blank" rel="noopener">
+              <span class="btn-stack"><small>Coming soon to</small>Google Play</span>
+            </a>
+            <a href="support.html" class="btn-secondary">Support VaultCam</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="../images/vaultcam/logo-128.png" alt="" />VaultCam</div>
+          <p class="footer-tagline">Offline, encrypted recorder for Android. Recording is always shown.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#record">Record</a></li>
+            <li><a href="#vault">Vault</a></li>
+            <li><a href="#evidence">Evidence tools</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="../vaultcam-legal/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../vaultcam-legal/terms-of-service.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="support.html">Support VaultCam</a></li>
+            <li><a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Amar Duwal &middot; VaultCam</span>
+        <a href="https://amarduwal.github.io/">amarduwal.github.io</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaultCam Privacy Policy</title>
+    <meta name="description" content="VaultCam collects no data. The app has no internet permission, recordings are encrypted with AES-256-GCM and stay on your phone, and there is no account, analytics, or ads." />
+    <link rel="canonical" href="https://amarduwal.github.io/vaultcam-legal/privacy-policy.html" />
+    <link rel="icon" href="../images/vaultcam/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#0A0D11" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://amarduwal.github.io/vaultcam-legal/privacy-policy.html" />
+    <meta property="og:site_name" content="VaultCam" />
+    <meta property="og:title" content="VaultCam Privacy Policy" />
+    <meta property="og:description" content="VaultCam collects no data. No internet permission, no account, no analytics, no ads." />
+    <meta property="og:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="VaultCam Privacy Policy" />
+    <meta name="twitter:description" content="VaultCam collects no data. No internet permission, no account, no analytics, no ads." />
+    <meta name="twitter:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      :root {
+        --primary: #2DD4BF;
+        --amber: #F59E0B;
+        --bg: #0A0D11;
+        --surface: #161B22;
+        --surface-2: #1B222B;
+        --border: #262E38;
+        --outline: #566170;
+        --text: #E6EDF3;
+        --text-muted: #9DA7B3;
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+      :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 40px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(10,13,17,0.9);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav-brand { display: flex; align-items: center; gap: 9px; font-size: 17px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .nav-brand img { width: 26px; height: 26px; display: block; border-radius: 6px; }
+      .nav-links { display: flex; gap: 24px; }
+      .nav-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+      .nav-links a:hover { color: var(--text); }
+
+      .page-header { padding: 56px 40px 40px; max-width: 780px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+      .page-badge {
+        display: inline-flex; align-items: center; gap: 6px;
+        background: var(--surface); border: 1px solid var(--border);
+        padding: 5px 12px; border-radius: 20px;
+        font-size: 12px; color: var(--text-muted); margin-bottom: 16px;
+      }
+      .page-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+      .page-header .meta { font-size: 13px; color: var(--text-muted); }
+
+      .content { max-width: 780px; margin: 0 auto; padding: 40px 40px 80px; }
+
+      h2 {
+        font-size: 20px; font-weight: 600;
+        margin-top: 44px; margin-bottom: 14px;
+        color: var(--text);
+        display: flex; align-items: center; gap: 10px;
+      }
+      h2::before { content: ''; display: block; width: 4px; height: 20px; background: var(--primary); border-radius: 2px; flex-shrink: 0; }
+      h3 { font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 10px; color: var(--text); }
+      p { color: var(--text-muted); margin-bottom: 12px; }
+      ul { list-style: none; margin-bottom: 16px; }
+      ul li { color: var(--text-muted); padding: 6px 0 6px 20px; position: relative; font-size: 15px; }
+      ul li::before { content: ''; position: absolute; left: 2px; top: 1.05em; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+      strong { color: var(--text); font-weight: 600; }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .info-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--primary);
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 14.5px;
+        color: var(--text-muted);
+      }
+      .info-box.warn { border-left-color: var(--amber); }
+
+      .table-wrap { overflow-x: auto; margin: 12px 0 18px; border: 1px solid var(--border); border-radius: 10px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+      th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+      th { background: var(--surface-2); color: var(--text); font-weight: 600; font-size: 13px; }
+      td { color: var(--text-muted); }
+      td:first-child { color: var(--text); font-weight: 500; }
+      tr:last-child td { border-bottom: none; }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 40px;
+        display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+      }
+      .footer-note { font-size: 13px; color: var(--text-muted); }
+      .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+      .footer-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; }
+      .footer-links a:hover { color: var(--text); }
+
+      @media (max-width: 640px) {
+        nav, .page-header, .content, footer { padding-left: 16px; padding-right: 16px; }
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 28px; }
+        th, td { padding: 10px 12px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <a href="../vaultcam/" class="nav-brand"><img src="../images/vaultcam/logo-128.png" alt="" />VaultCam</a>
+      <div class="nav-links">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="https://amarduwal.github.io/">amarduwal.github.io</a>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-badge">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective date: October 12, 2026</p>
+    </div>
+
+    <main class="content">
+
+      <h2>Summary</h2>
+      <div class="info-box">
+        VaultCam collects no data. The app has no internet permission and makes no network calls. Your
+        recordings are encrypted and stay on your phone. There is no account, no analytics, no ads, and no
+        crash reporting that leaves your phone. The developer cannot see, open, or recover your recordings.
+      </div>
+
+      <h2>Who we are</h2>
+      <p>
+        VaultCam is an offline, encrypted recorder for Android (package <strong>org.vaultcam.app</strong>), made by
+        Amar Duwal ("we", "us"). This policy covers the VaultCam app and the VaultCam pages on amarduwal.github.io.
+      </p>
+
+      <h2>Information we collect</h2>
+      <p>
+        <strong>None.</strong> We do not collect, receive, sell, or share any personal or usage data. The app cannot
+        send data to us or anyone else, because it does not have Android's internet permission.
+      </p>
+
+      <h2>What VaultCam stores on your phone</h2>
+      <p>To work, the app keeps the following in its own private storage on your phone. None of it is sent anywhere.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Data</th><th scope="col">Why</th><th scope="col">How it is kept</th></tr></thead>
+          <tbody>
+            <tr><td>Recordings (audio, video, screen)</td><td>The reason the app exists</td><td>Encrypted with AES-256-GCM as they are saved, in app-private storage. They never appear in your gallery.</td></tr>
+            <tr><td>Recording names</td><td>So you can find recordings</td><td>Encrypted.</td></tr>
+            <tr><td>Recording details (times, length, size, format, device model, Android version)</td><td>The vault list, the session log, and evidence reports</td><td>In the app's local database, with the recording.</td></tr>
+            <tr><td>SHA-256 fingerprint and session log</td><td>To show later that a recording has not changed</td><td>In the app's local database, with the recording.</td></tr>
+            <tr><td>Vault key material</td><td>To open the vault with your PIN or fingerprint</td><td>Protected by Android Keystore and bound to your phone's secure hardware. Your PIN itself is never stored.</td></tr>
+            <tr><td>Wrong-PIN counter</td><td>To pause entry after repeated wrong PINs</td><td>App settings, on the phone.</td></tr>
+            <tr><td>Settings (triggers, quality, schedule, and similar)</td><td>To remember your choices</td><td>App settings, on the phone.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What VaultCam does not do</h2>
+      <ul>
+        <li>No internet permission and no network calls of any kind</li>
+        <li>No account, sign-in, or cloud storage</li>
+        <li>No analytics, usage tracking, or advertising ID</li>
+        <li>No ads and no advertising SDK</li>
+        <li>No crash reporting that leaves the phone</li>
+        <li>No access to location, contacts, or your shared storage</li>
+      </ul>
+
+      <h2>Encryption and the vault</h2>
+      <ul>
+        <li>Every recording is encrypted with AES-256-GCM while it is being saved.</li>
+        <li>The vault opens with your PIN, or with your fingerprint if you turn that on. It locks when you leave the app.</li>
+        <li>After 4 wrong PINs, entry pauses for a while, longer each time.</li>
+        <li><strong>There is no recovery.</strong> If you forget your PIN, nobody can open your recordings, including us. There is no backdoor.</li>
+      </ul>
+
+      <h2>Copies you send out yourself</h2>
+      <p>Two actions create a copy outside the vault. Both happen only when you choose them.</p>
+      <ul>
+        <li><strong>Export</strong> saves an unencrypted copy to a folder you choose. Video exports remove the date, location, and device details by default; you can choose to keep them.</li>
+        <li><strong>Share</strong> sends an unencrypted copy to one app you pick, with a generic file name and those details removed. VaultCam deletes its temporary copy within about an hour, or the next time you open VaultCam after that.</li>
+      </ul>
+      <div class="info-box warn">
+        Once a copy leaves VaultCam, it is no longer protected by the app. The folder, app, or person you send it
+        to, and any cloud backup on that side, control what happens to it under their own policies.
+      </div>
+
+      <h2>Backups, retention, and deletion</h2>
+      <ul>
+        <li>Your data stays on your phone until you delete it.</li>
+        <li>Deleted recordings cannot be recovered.</li>
+        <li>Android cloud backup and phone-to-phone transfer do not copy VaultCam's data, including the vault.</li>
+        <li>Uninstalling VaultCam deletes everything it stored.</li>
+      </ul>
+
+      <h2>Permissions</h2>
+      <p>VaultCam asks for each permission when you first need it. You can revoke any of them in Android settings; only the feature that needs it stops working.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col">Permission</th><th scope="col">Why</th></tr></thead>
+          <tbody>
+            <tr><td>Microphone</td><td>To record audio, only while you are recording.</td></tr>
+            <tr><td>Camera</td><td>To record video, only while you are recording.</td></tr>
+            <tr><td>Notifications</td><td>To show that recording is on.</td></tr>
+            <tr><td>Foreground service (microphone, camera, screen capture)</td><td>To keep recording when you leave the app or turn the screen off.</td></tr>
+            <tr><td>Foreground service (special use)</td><td>To keep triggers armed so they can start a recording.</td></tr>
+            <tr><td>Screen capture</td><td>Asked by Android each time you start a screen recording.</td></tr>
+            <tr><td>Display over other apps (optional)</td><td>For the floating recording panel and the Presentation drawing tools.</td></tr>
+            <tr><td>Exact alarms</td><td>To start a scheduled recording on time.</td></tr>
+            <tr><td>Biometric</td><td>To open the vault with your fingerprint, if you turn it on.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Recording is always shown</h2>
+      <p>
+        Whenever VaultCam records, including recordings started by a trigger, a notification shows that recording
+        is on, and Android shows its camera or microphone indicator. Recording laws differ by place, and some require
+        consent from everyone being recorded. You are responsible for following the laws where you are.
+      </p>
+
+      <h2>Donations</h2>
+      <p>
+        The version of VaultCam distributed outside Google Play has a Support page with donation QR codes. The Google
+        Play version has none. Opening a donation link opens your phone's browser, outside the app; VaultCam itself
+        still makes no network calls and does not know whether you donated.
+      </p>
+      <p>
+        If you choose to donate, the service you use (Khalti, eSewa, PayPal, or a crypto network) processes the payment
+        under its own privacy policy. As the recipient, the developer may see what that service shows a recipient, such as
+        a name, account ID, or wallet address. It is used only to receive the gift and is never linked to the app.
+      </p>
+
+      <h2>This website</h2>
+      <p>
+        These pages are hosted on GitHub Pages and load the Inter font from Google Fonts. Those services may log
+        standard technical data such as your IP address under their own policies. We do not add analytics or tracking
+        to these pages.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        VaultCam is not directed to children under 13. It collects no personal information from anyone, including
+        children.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Because we hold no data about you, there is nothing for us to give you, correct, or delete. Everything VaultCam
+        stores is on your phone and under your control: you can delete recordings in the app, or uninstall the app to
+        remove all of it.
+      </p>
+
+      <h2>Changes to this policy</h2>
+      <p>
+        If this policy changes, the effective date above will change with it. If a future version of VaultCam ever
+        handled data differently, this page would say so before that version is released.
+      </p>
+
+      <h2>Contact</h2>
+      <ul>
+        <li>Developer: Amar Duwal</li>
+        <li>Email: <a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a></li>
+        <li>Website: <a href="https://amarduwal.github.io/vaultcam/">amarduwal.github.io/vaultcam</a></li>
+      </ul>
+
+    </main>
+
+    <footer>
+      <div class="footer-note">&copy; 2026 Amar Duwal &middot; VaultCam</div>
+      <div class="footer-links">
+        <a href="../vaultcam/">VaultCam</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="mailto:duwal.amar2006@gmail.com">Contact</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

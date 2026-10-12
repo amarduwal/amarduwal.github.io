@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VaultCam Terms of Service</title>
+    <meta name="description" content="The terms for using VaultCam, a free, offline, encrypted recorder for Android. You are responsible for following the recording laws where you are." />
+    <link rel="canonical" href="https://amarduwal.github.io/vaultcam-legal/terms-of-service.html" />
+    <link rel="icon" href="../images/vaultcam/favicon.png" type="image/png" />
+    <meta name="theme-color" content="#0A0D11" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://amarduwal.github.io/vaultcam-legal/terms-of-service.html" />
+    <meta property="og:site_name" content="VaultCam" />
+    <meta property="og:title" content="VaultCam Terms of Service" />
+    <meta property="og:description" content="The terms for using VaultCam, a free, offline, encrypted recorder for Android." />
+    <meta property="og:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="VaultCam Terms of Service" />
+    <meta name="twitter:description" content="The terms for using VaultCam, a free, offline, encrypted recorder for Android." />
+    <meta name="twitter:image" content="https://amarduwal.github.io/images/vaultcam/logo-512.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      :root {
+        --primary: #2DD4BF;
+        --amber: #F59E0B;
+        --bg: #0A0D11;
+        --surface: #161B22;
+        --surface-2: #1B222B;
+        --border: #262E38;
+        --outline: #566170;
+        --text: #E6EDF3;
+        --text-muted: #9DA7B3;
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        min-height: 100vh;
+      }
+      :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 40px;
+        border-bottom: 1px solid var(--border);
+        background: rgba(10,13,17,0.9);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav-brand { display: flex; align-items: center; gap: 9px; font-size: 17px; font-weight: 700; color: var(--text); text-decoration: none; }
+      .nav-brand img { width: 26px; height: 26px; display: block; border-radius: 6px; }
+      .nav-links { display: flex; gap: 24px; }
+      .nav-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; transition: color 0.2s; }
+      .nav-links a:hover { color: var(--text); }
+
+      .page-header { padding: 56px 40px 40px; max-width: 780px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+      .page-badge {
+        display: inline-flex; align-items: center; gap: 6px;
+        background: var(--surface); border: 1px solid var(--border);
+        padding: 5px 12px; border-radius: 20px;
+        font-size: 12px; color: var(--text-muted); margin-bottom: 16px;
+      }
+      .page-header h1 { font-size: 36px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.5px; }
+      .page-header .meta { font-size: 13px; color: var(--text-muted); }
+
+      .content { max-width: 780px; margin: 0 auto; padding: 40px 40px 80px; }
+
+      h2 {
+        font-size: 20px; font-weight: 600;
+        margin-top: 44px; margin-bottom: 14px;
+        color: var(--text);
+        display: flex; align-items: center; gap: 10px;
+      }
+      h2::before { content: ''; display: block; width: 4px; height: 20px; background: var(--primary); border-radius: 2px; flex-shrink: 0; }
+      h3 { font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 10px; color: var(--text); }
+      p { color: var(--text-muted); margin-bottom: 12px; }
+      ul { list-style: none; margin-bottom: 16px; }
+      ul li { color: var(--text-muted); padding: 6px 0 6px 20px; position: relative; font-size: 15px; }
+      ul li::before { content: ''; position: absolute; left: 2px; top: 1.05em; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+      strong { color: var(--text); font-weight: 600; }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      .info-box {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--primary);
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin: 20px 0;
+        font-size: 14.5px;
+        color: var(--text-muted);
+      }
+      .info-box.warn { border-left-color: var(--amber); }
+
+      .table-wrap { overflow-x: auto; margin: 12px 0 18px; border: 1px solid var(--border); border-radius: 10px; }
+      table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+      th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+      th { background: var(--surface-2); color: var(--text); font-weight: 600; font-size: 13px; }
+      td { color: var(--text-muted); }
+      td:first-child { color: var(--text); font-weight: 500; }
+      tr:last-child td { border-bottom: none; }
+
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 40px;
+        display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+      }
+      .footer-note { font-size: 13px; color: var(--text-muted); }
+      .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+      .footer-links a { color: var(--text-muted); font-size: 13px; text-decoration: none; }
+      .footer-links a:hover { color: var(--text); }
+
+      .caps { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+      @media (max-width: 640px) {
+        nav, .page-header, .content, footer { padding-left: 16px; padding-right: 16px; }
+        .nav-links { display: none; }
+        .page-header h1 { font-size: 28px; }
+        th, td { padding: 10px 12px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <a href="../vaultcam/" class="nav-brand"><img src="../images/vaultcam/logo-128.png" alt="" />VaultCam</a>
+      <div class="nav-links">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="terms-of-service.html">Terms</a>
+        <a href="https://amarduwal.github.io/">amarduwal.github.io</a>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-badge">Legal</div>
+      <h1>Terms of Service</h1>
+      <p class="meta">Effective date: October 12, 2026</p>
+    </div>
+
+    <main class="content">
+
+      <h2>Acceptance of terms</h2>
+      <p>
+        By downloading, installing, or using VaultCam ("the App"), you agree to these Terms of Service. If you do not
+        agree, do not use the App. The App is made by Amar Duwal ("we", "us").
+      </p>
+
+      <h2>What VaultCam is</h2>
+      <p>
+        VaultCam is an offline recorder for Android 8.0 and later. It records audio, video, and the screen, encrypts each
+        recording with AES-256-GCM as it is saved, and keeps it in an encrypted vault on your phone. It includes a player,
+        trim and compress tools, export and share, and evidence tools (a SHA-256 fingerprint, a session log, and a
+        chain-of-custody PDF). The App has no internet permission and requires no account.
+      </p>
+
+      <h2>Your responsibility for recording</h2>
+      <div class="info-box warn">
+        <strong>Recording laws differ by place.</strong> Some places require consent from everyone being recorded, and some
+        places limit recording in certain locations. You are solely responsible for knowing and following the laws that
+        apply to you and to every recording you make. The App does not and cannot check whether a recording is lawful.
+      </div>
+      <ul>
+        <li>The App always shows that it is recording, with a notification and Android's camera or microphone indicator. It is not made for recording people without their knowledge.</li>
+        <li>You agree not to use the App to record anyone unlawfully, to harass or stalk anyone, or to invade anyone's privacy.</li>
+        <li>You agree not to try to remove, block, or work around the recording notification or indicators.</li>
+      </ul>
+
+      <h2>Evidence tools</h2>
+      <p>
+        The SHA-256 fingerprint, session log, and chain-of-custody PDF can help show that a file has not changed since it
+        was saved. We make no promise that any court, authority, or other party will accept a recording or report as
+        evidence. Get legal advice for your situation.
+      </p>
+
+      <h2>Your PIN and your recordings</h2>
+      <ul>
+        <li>Your vault opens only with your PIN or your fingerprint. There is no recovery and no backdoor.</li>
+        <li>If you forget your PIN, your recordings cannot be recovered by you, by us, or by anyone else.</li>
+        <li>Recordings are stored only on your phone. If you lose the phone, reset it, delete a recording, or uninstall the App, that data is gone. We cannot restore it.</li>
+        <li>Copies you export or share are not encrypted and leave the App's protection. You are responsible for them.</li>
+      </ul>
+
+      <h2>Free to use</h2>
+      <p>
+        The App is free. There are no ads, no paywalls, no subscriptions, and no in-app purchases. Every feature is
+        available to everyone.
+      </p>
+
+      <h2>Donations</h2>
+      <ul>
+        <li>The version of the App distributed outside Google Play links to a <a href="../vaultcam/support.html">Support page</a> where you can send an optional donation. The Google Play version has no donation links.</li>
+        <li>A donation is a voluntary gift, not a purchase. It gives no features, services, priority support, or other benefit.</li>
+        <li>Donations are non-refundable. Crypto transfers cannot be reversed, so check the address and network before you send.</li>
+        <li>Payments are processed by the service you choose (Khalti, eSewa, PayPal, or a crypto network) under its own terms.</li>
+      </ul>
+
+      <h2>Your content</h2>
+      <ul>
+        <li>You own the recordings you make. We do not claim any rights in them.</li>
+        <li>Your recordings stay on your phone. We have no access to them.</li>
+      </ul>
+
+      <h2>Acceptable use</h2>
+      <p>You agree <strong>not</strong> to:</p>
+      <ul>
+        <li>Use the App for anything illegal, including unlawful recording</li>
+        <li>Use the App to harm, threaten, harass, or stalk anyone</li>
+        <li>Modify or repackage the App to remove the recording notification or other safety features</li>
+        <li>Distribute modified copies of the App under the VaultCam name</li>
+      </ul>
+
+      <h2>Data and privacy</h2>
+      <p>
+        Your use of the App is also covered by our <a href="privacy-policy.html">Privacy Policy</a>. In short: we collect no
+        data, and the App cannot connect to the internet.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        The App, its name, its logo, and its design belong to the developer. These terms do not give you any right to use
+        the VaultCam name or logo.
+      </p>
+
+      <h2>Disclaimers</h2>
+      <p class="caps">
+        THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY KIND. WE DO NOT GUARANTEE THAT THE APP WILL
+        BE UNINTERRUPTED OR ERROR-FREE, THAT EVERY RECORDING WILL BE CAPTURED OR SAVED COMPLETELY, THAT IT WILL WORK ON EVERY
+        DEVICE, OR THAT ANY SECURITY MEASURE CANNOT BE DEFEATED. ANDROID OR YOUR PHONE MAKER MAY STOP OR LIMIT BACKGROUND
+        RECORDING. THE APP IS NOT AN EMERGENCY SERVICE. IF YOU ARE IN DANGER, CONTACT YOUR LOCAL EMERGENCY NUMBER.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p class="caps">
+        TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE ARE NOT LIABLE FOR ANY LOSS OF DATA OR RECORDINGS (INCLUDING LOSS CAUSED BY
+        A FORGOTTEN PIN, DEVICE LOSS, DEVICE RESET, OR UNINSTALLATION), FOR HOW YOU USE THE APP OR ANY RECORDING, OR FOR ANY
+        INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM YOUR USE OF THE APP.
+      </p>
+
+      <h2>Changes to these terms</h2>
+      <ul>
+        <li>We may update these terms. The effective date above will change when we do.</li>
+        <li>If you keep using the App after a change, you accept the updated terms.</li>
+      </ul>
+
+      <h2>Governing law</h2>
+      <!-- Assumption: owner to confirm with a lawyer. Governing law and venue are an open question (OQ-04). -->
+      <p>
+        These terms are governed by the laws of Nepal. Before taking any formal step, we ask that you contact us so we can
+        try to resolve the issue in good faith. Nothing in these terms removes rights you have under the consumer
+        protection laws of the place where you live.
+      </p>
+
+      <h2>Contact</h2>
+      <ul>
+        <li>Developer: Amar Duwal</li>
+        <li>Email: <a href="mailto:duwal.amar2006@gmail.com">duwal.amar2006@gmail.com</a></li>
+        <li>Website: <a href="https://amarduwal.github.io/vaultcam/">amarduwal.github.io/vaultcam</a></li>
+      </ul>
+
+    </main>
+
+    <footer>
+      <div class="footer-note">&copy; 2026 Amar Duwal &middot; VaultCam</div>
+      <div class="footer-links">
+        <a href="../vaultcam/">VaultCam</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="mailto:duwal.amar2006@gmail.com">Contact</a>
+      </div>
+    </footer>
+
+  </body>
+</html>
