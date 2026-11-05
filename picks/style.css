@@ -1,0 +1,44 @@
+:root {
+  --bg: #f4eee6;
+  --card: #fffaf3;
+  --ink: #3b2618;
+  --muted: #6b4a33;
+  --line: #e4d8c8;
+  --accent: #8a4b2a;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1410;
+    --card: #271c16;
+    --ink: #f3e6d3;
+    --muted: #cdb396;
+    --line: #3d2d23;
+    --accent: #e0a070;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+header { padding: 48px 0 24px; text-align: center; }
+.kicker { letter-spacing: 0.22em; font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; }
+h1 { font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 500; font-size: clamp(34px, 8vw, 52px); line-height: 1.1; margin: 10px 0 12px; }
+header p { margin: 0 auto; max-width: 480px; color: var(--muted); }
+.disclosure { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; font-size: 14px; color: var(--muted); margin: 8px 0 32px; }
+.pick { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; margin-bottom: 28px; }
+.pick img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; object-fit: cover; background: var(--line); }
+.body { padding: 20px 20px 24px; }
+h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2; margin: 0 0 8px; }
+.body p { margin: 0 0 12px; }
+.body ul { margin: 0 0 14px; padding-left: 20px; color: var(--muted); }
+.meta { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.btn { display: block; text-align: center; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; padding: 14px 18px; border-radius: 12px; }
+.btn:hover, .btn:focus-visible { filter: brightness(1.08); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+footer { padding: 8px 0 56px; font-size: 13px; color: var(--muted); text-align: center; }
+footer a { color: var(--accent); }
